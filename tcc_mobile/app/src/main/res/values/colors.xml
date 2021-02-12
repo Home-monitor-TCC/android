@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="laranja">#F5800B</color>
+    <color name="preto">#404044</color>
+    <color name="cinzaEscuro">#606067</color>
+    <color name="cinzaClaro">#B1B1B1</color>
+    <color name="cinzaMedio">#4D4D54</color>
+    <color name="transparente">#00FFFFFF</color>
+
+    <color name="brancoHeader">#F1F0EE</color>
+    <color name="brancoFundo">#E4E3E1</color>
+    <color name="laranjaEscuro">#CF7011</color>
+</resources>

@@ -1,0 +1,22 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:colorPrimary">@color/cinzaMedio</item>
+        <item name="android:colorPrimaryDark">@color/cinzaClaro</item>
+        <item name="android:colorAccent">@color/cinzaClaro</item>
+        <item name="android:textColor">@color/cinzaClaro</item>
+        <item name="android:colorControlNormal">@color/cinzaClaro</item>
+        <item name="android:colorControlActivated">@color/cinzaClaro</item>
+        <item name="android:thumbTint">@color/laranja</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.DayNight.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.DayNight" />
+
+</resources>
