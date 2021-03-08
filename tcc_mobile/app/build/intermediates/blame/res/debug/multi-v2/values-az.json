@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\osmar\\Desktop\\TCC\\android\\tcc_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-az\\values-az.xml",
+            "outputFile": "C:\\Users\\osmar\\Desktop\\Tcc-Github\\android\\tcc_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-az\\values-az.xml",
             "map": [
                 {
                     "source": "C:\\Users\\osmar\\.gradle\\caches\\transforms-2\\files-2.1\\395caf503a19363977c06465a7c114a5\\core-1.3.1\\res\\values-az\\values-az.xml",

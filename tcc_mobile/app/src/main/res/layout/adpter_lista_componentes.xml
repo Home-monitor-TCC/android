@@ -21,7 +21,7 @@
 
             <TextView
                 android:id="@+id/txtComponenteName"
-                android:layout_width="wrap_content"
+                android:layout_width="160dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:gravity="center_vertical"
