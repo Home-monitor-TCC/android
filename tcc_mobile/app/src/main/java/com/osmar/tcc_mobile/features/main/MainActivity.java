@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -19,6 +20,7 @@ import com.osmar.tcc_mobile.Adpter.Adpter;
 import com.osmar.tcc_mobile.ClassesImportadas.RecyclerItemClickListener;
 import com.osmar.tcc_mobile.R;
 import com.osmar.tcc_mobile.features.config.ConfigActivity;
+import com.osmar.tcc_mobile.features.config.SaveState;
 import com.osmar.tcc_mobile.features.informações.InfoActivity;
 import com.osmar.tcc_mobile.features.registrar.RegistrarComponente;
 import com.osmar.tcc_mobile.model.Componente;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         imgButtonConfig=findViewById(R.id.imgBtnConfig);
         imgButtonConfig.setOnClickListener(new View.OnClickListener() {

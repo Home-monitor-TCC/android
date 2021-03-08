@@ -14,20 +14,11 @@ import com.osmar.tcc_mobile.R;
 public class ConfigActivity extends AppCompatActivity {
     private ImageView imageViewVoltar;
     private Switch fundo_app;
-    //SaveState saveState;
+    SaveState saveState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // saveState = new SaveState(this);
-       // if(saveState.getState() == true){
-        //    getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-       //     fundo_app.setChecked(true);
-       // }else{
-       //     getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-       //     fundo_app.setChecked(false);
-       // }
-
         setContentView(R.layout.activity_config);
         imageViewVoltar=findViewById(R.id.imgVoltar2);
         fundo_app=findViewById(R.id.switchTema);
@@ -39,19 +30,30 @@ public class ConfigActivity extends AppCompatActivity {
             }
         });
 
+        saveState = new SaveState(this);
+        if(saveState.getState() == true){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            fundo_app.setChecked(false);
+        }else if(saveState.getState() == false){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            fundo_app.setChecked(true);
+        }else{
+            saveState.setState(false);
+        }
+
+
         fundo_app.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b!=true)
+                if(b==true)
                 {
-                    //saveState.setState(false);
-                    getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
+                    getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    saveState.setState(false);
                     //Osmar, se o switch ta como true , que ´o padrão dele , então o fundo fica no escuro , se for falso voce muda para claro
                 }
                 else{
-                    //saveState.setState(true);
-                    getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    saveState.setState(true);
                     //Aqui fica no claro , obviamente
                 }
 
