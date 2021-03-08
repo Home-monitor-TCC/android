@@ -1,0 +1,28 @@
+package com.osmar.tcc_mobile.Api;
+
+import com.osmar.tcc_mobile.model.Componente;
+
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.DELETE;
+import retrofit2.http.PATCH;
+import retrofit2.http.POST;
+
+public interface PlacaInterfaceApi {
+
+    @POST("/componentes/adicionar")
+    Call<Componente> adicionarComponente(@Body Componente componente);
+
+    @DELETE("/componentes/remover")
+    Call<Componente> removerComponente(@Body Componente componente);
+
+    @PATCH("/componentes/editar")
+    Call<Componente> editarComponente(@Body Componente componente);
+
+    @PATCH("/componentes/led/acender")
+    Call<Componente> acenderComponente(@Body Componente componente);
+
+    @PATCH("/componentes/led/apagar")
+    Call<Componente> apagarComponente(@Body Componente componente);
+
+}

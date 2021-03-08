@@ -23,7 +23,7 @@ import com.osmar.tcc_mobile.features.config.ConfigActivity;
 import com.osmar.tcc_mobile.features.config.SaveState;
 import com.osmar.tcc_mobile.features.informações.InfoActivity;
 import com.osmar.tcc_mobile.features.registrar.RegistrarComponente;
-import com.osmar.tcc_mobile.model.Componente;
+import com.osmar.tcc_mobile.model.ComponenteButao;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerComponentes;
-    private ArrayList<Componente> arrayComponentes=new ArrayList<>();
+    private ArrayList<ComponenteButao> arrayComponentes=new ArrayList<>();
     private ImageView imgButtonConfig;
 
 
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onItemClick(View view, int position) {
                                 Intent intent =new Intent(getApplicationContext(), InfoActivity.class);
 
-                                Componente componente =arrayComponentes.get(position);
+                                ComponenteButao componente =arrayComponentes.get(position);
                                 intent.putExtra("componente",componente);
                                 startActivity(intent);
 
@@ -108,17 +108,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void criarComponentes()
     {
-        Componente componente =new Componente("Luz da Sala","o led que acende a sala","LED",123456,R.drawable.ic_icon_metro_switch,true);
+        ComponenteButao componente =new ComponenteButao("Luz da Sala","o led que acende a sala","LED",123456,R.drawable.ic_icon_metro_switch,true);
         arrayComponentes.add(componente);
 
-        componente =new Componente("Luz da Cozinha","o led que acende a Cozinha","LED",139784,R.drawable.ic_icon_metro_switch,true);
+        componente =new ComponenteButao("Luz da Cozinha","o led que acende a Cozinha","LED",139784,R.drawable.ic_icon_metro_switch,true);
         arrayComponentes.add(componente);
 
-        componente =new Componente("Luz da Casa do Fifi","o led que acende a casa do filardi","LED",193126,R.drawable.ic_icon_metro_switch,true);
+        componente =new ComponenteButao("Luz da Casa do Fifi","o led que acende a casa do filardi","LED",193126,R.drawable.ic_icon_metro_switch,true);
         arrayComponentes.add(componente);
-        componente =new Componente("Luz do osmose","A toca do osmar tem que ter luz","LED",46556,R.drawable.ic_icon_metro_switch,true);
+        componente =new ComponenteButao("Luz do osmose","A toca do osmar tem que ter luz","LED",46556,R.drawable.ic_icon_metro_switch,true);
         arrayComponentes.add(componente);
-        componente =new Componente("Luz da Comoda","o led que acende algo","LED",156765,R.drawable.ic_icon_metro_switch,true);
+        componente =new ComponenteButao("Luz da Comoda","o led que acende algo","LED",156765,R.drawable.ic_icon_metro_switch,true);
         arrayComponentes.add(componente);
 
 
