@@ -1,18 +1,19 @@
 package com.osmar.tcc_mobile.Api;
 
-import java.io.IOException;
-import java.text.Annotation;
+import android.content.Context;
 
+import java.io.IOException;
+import java.lang.annotation.*;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
 import retrofit2.Response;
 
 public class ErrorUtils  {
-    private RetrofitRequisicao requisicao = new RetrofitRequisicao();
+
+    private RetrofitRequisicao requisicao = new RetrofitRequisicao(null);
     public static ApiError parseError(Response<?> response) {
         Converter<ResponseBody, ApiError> converter =
-                requisicao.getRetrofit().retrofit()
-                        .responseBodyConverter(ApiError.class, new Annotation[0]);
+               ServiceGenerator.getRetrofit().responseBodyConverter(ApiError.class,new Annotation[0]);
 
         ApiError error;
 
@@ -24,4 +25,6 @@ public class ErrorUtils  {
 
         return error;
     }
+
+
 }

@@ -22,8 +22,8 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
         imgVoltar=findViewById(R.id.imgVoltar2);
-        editComponenteDescricao=findViewById(R.id.editTextComponenteDescriçãoInfo);
-        editComponenteName=findViewById(R.id.editTextComponenteNameInfo);
+        editComponenteDescricao=findViewById(R.id.editTextComponenteDescricaoRegistro2);
+        editComponenteName=findViewById(R.id.editTextComponenteNameRegistro2);
         txtPinoEscolhido=findViewById(R.id.txtPinoEscolhidoInfo);
         Bundle dadosComponente =getIntent().getExtras();
         componenteButao =(ComponenteButao)dadosComponente.getSerializable("componente");

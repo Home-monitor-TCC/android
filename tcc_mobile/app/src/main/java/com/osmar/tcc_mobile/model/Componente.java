@@ -6,6 +6,13 @@ public class Componente {
     private int tipo;
     private int pino;
 
+    public Componente(String nome, String descricao, int tipo, int pino) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.tipo = tipo;
+        this.pino = pino;
+    }
+
     public String getNome() {
         return nome;
     }

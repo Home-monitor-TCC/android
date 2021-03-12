@@ -54,7 +54,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editTextComponenteNameInfo"
+            android:id="@+id/editTextComponenteNameRegistro2"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginLeft="16dp"
@@ -76,7 +76,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editTextComponenteDescriçãoInfo"
+            android:id="@+id/editTextComponenteDescricaoRegistro2"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginLeft="16dp"
@@ -122,7 +122,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/btnLigarLed"
+            android:id="@+id/btnConfirmarRegistro2"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -1714,7 +1714,8 @@ id beginning
 id blocking
 id bottom
 id bounce
-id btnLigarLed
+id btnConfirmarRegistro2
+id btnSairRegistrar2
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -1780,8 +1781,8 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
-id editTextComponenteDescriçãoInfo
-id editTextComponenteNameInfo
+id editTextComponenteDescricaoRegistro2
+id editTextComponenteNameRegistro2
 id edit_query
 id end
 id end_padder
@@ -1819,7 +1820,6 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageView3
 id imgBtnConfig
 id imgButtonLiga
 id imgVoltar2
@@ -2013,7 +2013,7 @@ id transition_transform
 id triangle
 id txtComponenteName
 id txtPinoEscolhidoInfo
-id txtPinoEscolhidoInfoRegistar
+id txtPinoEscolhidoRegistar2
 id txtTipoComponente
 id unchecked
 id uniform

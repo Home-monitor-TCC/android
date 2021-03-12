@@ -43,7 +43,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editTextComponenteNameInfo"
+            android:id="@+id/editTextComponenteNameRegistro2"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginLeft="16dp"
@@ -65,7 +65,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editTextComponenteDescriçãoInfo"
+            android:id="@+id/editTextComponenteDescricaoRegistro2"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginLeft="16dp"
@@ -87,7 +87,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/txtPinoEscolhidoInfoRegistar"
+            android:id="@+id/txtPinoEscolhidoRegistar2"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginLeft="16dp"
@@ -108,7 +108,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/btnLigarLed"
+            android:id="@+id/btnConfirmarRegistro2"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginEnd="64dp"
@@ -118,7 +118,7 @@
             app:srcCompat="@drawable/ic_icon_awesome_check" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/btnSairRegistrar2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
