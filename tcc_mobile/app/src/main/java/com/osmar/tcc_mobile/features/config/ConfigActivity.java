@@ -14,7 +14,7 @@ import com.osmar.tcc_mobile.R;
 public class ConfigActivity extends AppCompatActivity {
     private ImageView imageViewVoltar;
     private Switch fundo_app;
-    SaveState saveState;
+    private SaveState saveState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class ConfigActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+
             }
         });
 

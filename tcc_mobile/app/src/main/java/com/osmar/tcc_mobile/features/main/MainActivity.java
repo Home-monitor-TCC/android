@@ -6,9 +6,12 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -35,10 +38,24 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<ComponenteButao> arrayComponentes=new ArrayList<>();
     private ImageView imgButtonConfig;
 
+    SharedPreferences sharedPreferences = getSharedPreferences("preferences", MODE_PRIVATE);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        if(sharedPreferences.contains("bkey")){
+            Boolean estado = sharedPreferences.getBoolean("bkey", true);
+            if(estado == true) {
+                getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }else{
+                getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            }
+        }else{
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
 
         setContentView(R.layout.activity_main);
         imgButtonConfig=findViewById(R.id.imgBtnConfig);
