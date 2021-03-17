@@ -4,6 +4,7 @@ import android.content.Context;
 import android.widget.Toast;
 
 import com.osmar.tcc_mobile.model.Componente;
+import com.osmar.tcc_mobile.model.ComponenteResposta;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -13,11 +14,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitRequisicao {
     private static Retrofit retrofit;
+    private Context context;
     public RetrofitRequisicao(Context context){
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("/")
+                .baseUrl("https://192.168.0.228")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+        this.context=context;
 
     }
 
@@ -30,14 +33,14 @@ public class RetrofitRequisicao {
     }
 
     public void criarComponente(Componente componente, final Context context){
-        /*
+
         PlacaInterfaceApi placaInterfaceApi=retrofit.create(PlacaInterfaceApi.class);
-        Call<Componente> call = placaInterfaceApi.adicionarComponente(componente);
-        call.enqueue(new Callback<Componente>() {
+        Call<ComponenteResposta> call = placaInterfaceApi.adicionarComponente(componente);
+        call.enqueue(new Callback<ComponenteResposta>() {
             @Override
-            public void onResponse(Call<Componente> call, Response<Componente> response) {
+            public void onResponse(Call<ComponenteResposta> call, Response<ComponenteResposta> response) {
                 if(response.isSuccessful()){
-                    Componente c =response.body();
+                    ComponenteResposta componenteResposta =response.body();
                     Toast.makeText(context,"O novo componente foi registrado com sucesso", Toast.LENGTH_LONG).show();
                 }
                 else{
@@ -47,11 +50,14 @@ public class RetrofitRequisicao {
             }
 
             @Override
-            public void onFailure(Call<Componente> call, Throwable t) {
+            public void onFailure(Call<ComponenteResposta> call, Throwable t) {
 
             }
         });
 
-         */
+
+
+
+
     }
 }

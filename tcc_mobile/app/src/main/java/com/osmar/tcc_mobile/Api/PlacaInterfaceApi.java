@@ -1,6 +1,7 @@
 package com.osmar.tcc_mobile.Api;
 
 import com.osmar.tcc_mobile.model.Componente;
+import com.osmar.tcc_mobile.model.ComponenteResposta;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -11,7 +12,7 @@ import retrofit2.http.POST;
 public interface PlacaInterfaceApi {
 
     @POST("/componentes/adicionar")
-    Call<Componente> adicionarComponente(@Body Componente componente);
+    Call<ComponenteResposta> adicionarComponente(@Body Componente componente);
 
     @DELETE("/componentes/remover")
     Call<Componente> removerComponente(@Body Componente componente);
