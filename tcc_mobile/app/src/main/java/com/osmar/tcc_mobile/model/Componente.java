@@ -1,47 +1,47 @@
 package com.osmar.tcc_mobile.model;
 
 public class Componente {
-    private String nome;
-    private String descricao;
-    private int tipo;
-    private int pino;
+    private String name;
+    private String description;
+    private int type;
+    private int pin;
 
-    public Componente(String nome, String descricao, int tipo, int pino) {
-        this.nome = nome;
-        this.descricao = descricao;
-        this.tipo = tipo;
-        this.pino = pino;
+    public Componente(String name, String description, int type, int pin) {
+        this.name = name;
+        this.description = description;
+        this.type = type;
+        this.pin = pin;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public int getTipo() {
-        return tipo;
+    public int getType() {
+        return type;
     }
 
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
+    public void setType(int type) {
+        this.type = type;
     }
 
-    public int getPino() {
-        return pino;
+    public int getPin() {
+        return pin;
     }
 
-    public void setPino(int pino) {
-        this.pino = pino;
+    public void setPin(int pin) {
+        this.pin = pin;
     }
 }

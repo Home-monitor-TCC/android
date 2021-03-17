@@ -140,7 +140,7 @@ public class RegistrarComponente extends AppCompatActivity {
 
                 Componente componente =new Componente(nome,des,pino,tipo2);
                 retrofitRequisicao.criarComponente(componente,getApplicationContext());
-                finish();
+                //finish();
             }
         });
 

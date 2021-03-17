@@ -2,9 +2,9 @@ package com.osmar.tcc_mobile.model;
 
 public class ComponenteResposta extends Componente {
     private String id;
-    public ComponenteResposta(String nome, String descricao, int tipo, int pino,String id) {
-        super(nome, descricao, tipo, pino);
-        this.id=id;
+
+    public ComponenteResposta(String name, String description, int type, int pin) {
+        super(name, description, type, pin);
     }
 
     public String getId() {

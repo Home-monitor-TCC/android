@@ -3,6 +3,7 @@ package com.osmar.tcc_mobile.Api;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.osmar.tcc_mobile.features.main.MainActivity;
 import com.osmar.tcc_mobile.model.Componente;
 import com.osmar.tcc_mobile.model.ComponenteResposta;
 
@@ -44,8 +45,8 @@ public class RetrofitRequisicao {
                     Toast.makeText(context,"O novo componente foi registrado com sucesso", Toast.LENGTH_LONG).show();
                 }
                 else{
-                    //ApiError apiError=ErrorUtils.parseError(response);
-                    //Toast.makeText(context,apiError.message(),Toast.LENGTH_LONG).show();
+                    ApiError apiError=ErrorUtils.parseError(response);
+                    Toast.makeText(context,apiError.message(),Toast.LENGTH_LONG).show();
                 }
             }
 
