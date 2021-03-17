@@ -78,34 +78,44 @@ public class RegistrarComponente extends AppCompatActivity {
         listView.setAdapter(adaptador);
         listViewTipo.setAdapter(adaptador2);
 
+        listView.setVisibility(View.GONE);
+        listViewTipo.setVisibility(View.GONE);
+
         Log.i("depois do ListView","fodas listView");
 
         txtComponentePino.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listView.setVisibility(View.VISIBLE);
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        txtComponentePino.setText(listView.getItemAtPosition(position).toString());
-                        listView.setVisibility(View.GONE);
-                    }
-                });
-
+                if(listView.getVisibility() == View.GONE){
+                    listView.setVisibility(View.VISIBLE);
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            txtComponentePino.setText(listView.getItemAtPosition(position).toString());
+                            listView.setVisibility(View.GONE);
+                        }
+                    });
+                }else{
+                    listView.setVisibility(View.GONE);
+                }
             }
         });
 
         txtComponenteTipo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listViewTipo.setVisibility(View.VISIBLE);
-                listViewTipo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        txtComponenteTipo.setText(listViewTipo.getItemAtPosition(position).toString());
-                        listViewTipo.setVisibility(View.GONE);
-                    }
-                });
+                if(listViewTipo.getVisibility() == View.GONE){
+                    listViewTipo.setVisibility(View.VISIBLE);
+                    listViewTipo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            txtComponenteTipo.setText(listViewTipo.getItemAtPosition(position).toString());
+                            listViewTipo.setVisibility(View.GONE);
+                        }
+                    });
+                }else{
+                    listViewTipo.setVisibility(View.GONE);
+                }
             }
         });
 

@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerComponentes;
     private ArrayList<ComponenteButao> arrayComponentes=new ArrayList<>();
     private ImageView imgButtonConfig;
+    SaveState saveState;
 
     @Override
     protected void onStart() {
@@ -51,6 +54,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
+
+        //
+        Context context = getApplicationContext();
+
+        saveState = new SaveState(context);
+        Boolean modo = saveState.getState();
+        if(modo == true){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }else{
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+
+        //
 
         setContentView(R.layout.activity_main);
         imgButtonConfig=findViewById(R.id.imgBtnConfig);
