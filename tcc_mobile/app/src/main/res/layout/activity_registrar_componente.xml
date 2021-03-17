@@ -15,131 +15,134 @@
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintRegistrar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="52dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="52dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginBottom="8dp"
+                android:text="Registrar novo componente"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginBottom="8dp"
-            android:text="Registrar novo componente"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:text="Nome"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editTextComponenteNameRegistro2"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:drawableEnd="@drawable/ic_icon_open_pencil"
+            android:hint="Digta"
+            android:inputType="textPersonName"
+            android:text="Name" />
 
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
-        android:text="Nome"
-        android:textSize="24sp" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:text="Descrição"
+            android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/editTextComponenteNameRegistro2"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="16dp"
-        android:drawableEnd="@drawable/ic_icon_open_pencil"
-        android:hint="Digta"
-        android:inputType="textPersonName"
-        android:text="Name" />
-
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
-        android:text="Descrição"
-        android:textSize="24sp" />
-
-    <EditText
-        android:id="@+id/editTextComponenteDescricaoRegistro2"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="16dp"
-        android:drawableEnd="@drawable/ic_icon_open_pencil"
-        android:hint="Digta"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        <EditText
+            android:id="@+id/editTextComponenteDescricaoRegistro2"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:drawableEnd="@drawable/ic_icon_open_pencil"
+            android:hint="Digta"
+            android:inputType="textPersonName"
+            android:text="Name" />
 
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
-        android:text="Pino"
-        android:textSize="24sp" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:text="Pino"
+            android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/txtPinoEscolhidoRegistar2"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="16dp"
-        android:drawableEnd="@drawable/ic_icon_ionic_md_menu"
-        android:paddingRight="16dp"
-        />
+        <TextView
+            android:id="@+id/txtPinoEscolhidoRegistar2"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:drawableEnd="@drawable/ic_icon_ionic_md_menu"
+            android:paddingRight="16dp" />
 
-    <ListView
-        android:id="@+id/list_Pinos"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
+        <ListView
+            android:id="@+id/list_Pinos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
-        android:text="Tipo"
-        android:textSize="24sp"
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:text="Tipo"
+            android:textSize="24sp" />
 
-        />
-    <TextView
-        android:id="@+id/txtTipoComponenteRegistrar"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="16dp"
-        android:drawableEnd="@drawable/ic_icon_ionic_md_menu"
-        android:paddingRight="16dp"
-        />
+        <TextView
+            android:id="@+id/txtTipoComponenteRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:drawableEnd="@drawable/ic_icon_ionic_md_menu"
+            android:paddingRight="16dp" />
 
-    <ListView
-        android:id="@+id/list_Tipo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
-</LinearLayout>
+        <ListView
+            android:id="@+id/list_Tipo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </LinearLayout>
 
-<androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/constraintBottom"
     android:layout_width="match_parent"
     android:layout_height="52dp"
@@ -167,7 +170,5 @@ android:orientation="vertical">
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_icon_awesome_times" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
