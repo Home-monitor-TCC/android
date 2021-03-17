@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-26:12
+ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-27:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/luccafilizzola/.gradle/caches/transforms-2/files-2.1/3650ec8bf0dcc8ccaa9d86d2cec22c9f/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.navigation:navigation-ui:2.3.2] /Users/luccafilizzola/.gradle/caches/transforms-2/files-2.1/983d8c61c6c903528182a1dc31dda5c8/navigation-ui-2.3.2/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.2.0-alpha02] /Users/luccafilizzola/.gradle/caches/transforms-2/files-2.1/f80de87fa6f2d11aa9bce75d22874cca/material-1.2.0-alpha02/AndroidManifest.xml:17:1-24:12
@@ -46,20 +46,20 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/luccafilizzola/.
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/luccafilizzola/.gradle/caches/transforms-2/files-2.1/8a5e36edf0bf6877cab03a462d62c58d/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/luccafilizzola/.gradle/caches/transforms-2/files-2.1/f308a80268527ee3a98b201ce58e0ed5/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/luccafilizzola/.gradle/caches/transforms-2/files-2.1/b00e05c5496a872f0e85a2965fea390a/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-26:12
-INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-27:12
 	package
 		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:3:5-35
 		INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-26:12
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-27:12
 		INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-26:12
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:1-27:12
 		INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:2:11-69
@@ -68,7 +68,7 @@ ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/
 	android:name
 		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:7:5-24:19
+ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:7:5-25:19
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/luccafilizzola/.gradle/caches/transforms-2/files-2.1/3650ec8bf0dcc8ccaa9d86d2cec22c9f/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/luccafilizzola/.gradle/caches/transforms-2/files-2.1/3650ec8bf0dcc8ccaa9d86d2cec22c9f/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.2.0-alpha02] /Users/luccafilizzola/.gradle/caches/transforms-2/files-2.1/f80de87fa6f2d11aa9bce75d22874cca/material-1.2.0-alpha02/AndroidManifest.xml:22:5-20
@@ -80,43 +80,45 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/lucc
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.3.1] /Users/luccafilizzola/.gradle/caches/transforms-2/files-2.1/395caf503a19363977c06465a7c114a5/core-1.3.1/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:11:9-41
 	android:roundIcon
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:12:9-54
 	android:icon
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:10:9-43
 	android:allowBackup
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:8:9-35
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:13:9-40
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:14:9-40
+	android:networkSecurityConfig
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:8:9-69
 activity#com.osmar.tcc_mobile.features.config.ConfigActivity
-ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:14:9-77
+ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:15:9-77
 	android:name
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:14:19-65
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:15:19-65
 activity#com.osmar.tcc_mobile.features.informações.InfoActivity
-ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:15:9-71
+ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:16:9-71
 	android:name
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:15:19-68
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:16:19-68
 activity#com.osmar.tcc_mobile.features.registrar.RegistrarComponente
-ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:16:9-76
+ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:17:9-76
 	android:name
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:16:19-73
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:17:19-73
 activity#com.osmar.tcc_mobile.features.main.MainActivity
-ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:17:9-23:20
+ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:18:9-24:20
 	android:name
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:17:19-61
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:18:19-61
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:18:13-22:29
+ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN
-ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:19:17-69
+ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:19:25-66
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:21:17-77
+ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:21:27-74
+		ADDED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml:22:27-74
 uses-sdk
 INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/luccafilizzola/Desktop/TCefet/android/tcc_mobile/app/src/main/AndroidManifest.xml

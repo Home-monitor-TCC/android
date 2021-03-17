@@ -1837,6 +1837,8 @@ id line1
 id line3
 id linear
 id listMode
+id list_Pinos
+id list_Tipo
 id list_item
 id masked
 id media_actions
@@ -2015,6 +2017,7 @@ id txtComponenteName
 id txtPinoEscolhidoInfo
 id txtPinoEscolhidoRegistar2
 id txtTipoComponente
+id txtTipoComponenteRegistrar
 id unchecked
 id uniform
 id unlabeled
@@ -3083,6 +3086,7 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml network_security_config
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start

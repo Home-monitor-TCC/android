@@ -17,7 +17,7 @@ public class RetrofitRequisicao {
     private Context context;
     public RetrofitRequisicao(Context context){
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("https://192.168.0.228")
+                .baseUrl("http://192.168.0.228:2233")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         this.context=context;
