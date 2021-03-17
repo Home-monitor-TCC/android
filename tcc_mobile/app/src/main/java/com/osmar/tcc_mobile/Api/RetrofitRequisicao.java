@@ -44,8 +44,8 @@ public class RetrofitRequisicao {
                     Toast.makeText(context,"O novo componente foi registrado com sucesso", Toast.LENGTH_LONG).show();
                 }
                 else{
-                    ApiError apiError=ErrorUtils.parseError(response);
-                    Toast.makeText(context,apiError.message(),Toast.LENGTH_LONG).show();
+                    //ApiError apiError=ErrorUtils.parseError(response);
+                    //Toast.makeText(context,apiError.message(),Toast.LENGTH_LONG).show();
                 }
             }
 

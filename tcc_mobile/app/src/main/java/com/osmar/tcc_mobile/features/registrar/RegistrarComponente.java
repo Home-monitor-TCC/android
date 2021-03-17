@@ -78,15 +78,13 @@ public class RegistrarComponente extends AppCompatActivity {
         listView.setAdapter(adaptador);
         listViewTipo.setAdapter(adaptador2);
 
-        listView.setVisibility(View.GONE);
-        listViewTipo.setVisibility(View.GONE);
 
         Log.i("depois do ListView","fodas listView");
 
         txtComponentePino.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(listView.getVisibility() == View.GONE){
+
                     listView.setVisibility(View.VISIBLE);
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
@@ -95,16 +93,13 @@ public class RegistrarComponente extends AppCompatActivity {
                             listView.setVisibility(View.GONE);
                         }
                     });
-                }else{
-                    listView.setVisibility(View.GONE);
-                }
+
             }
         });
 
         txtComponenteTipo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(listViewTipo.getVisibility() == View.GONE){
                     listViewTipo.setVisibility(View.VISIBLE);
                     listViewTipo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
@@ -113,9 +108,7 @@ public class RegistrarComponente extends AppCompatActivity {
                             listViewTipo.setVisibility(View.GONE);
                         }
                     });
-                }else{
-                    listViewTipo.setVisibility(View.GONE);
-                }
+
             }
         });
 
@@ -127,25 +120,25 @@ public class RegistrarComponente extends AppCompatActivity {
                 String nome=editTextComponenteName.getText().toString();
                 String des=editTextComponenteDes.getText().toString();
                 int pino= Integer.parseInt(txtComponentePino.getText().toString());
-                int tipo;
+                int tipo2;
                 //Coloquei o tipo sempre como um porque sei la, temos que ver este trem de tipo.
                 String tipoComponente=txtComponenteTipo.getText().toString();
                 switch (tipoComponente){
                     case "Led":
-                        tipo=1;
+                        tipo2=1;
                         break;
 
 
                     case "Temperatura":
-                        tipo=2;
+                        tipo2=2;
                         break;
 
                     default:
-                        tipo=0;
+                        tipo2=0;
                 }
 
 
-                Componente componente =new Componente(nome,des,pino,tipo);
+                Componente componente =new Componente(nome,des,pino,tipo2);
                 retrofitRequisicao.criarComponente(componente,getApplicationContext());
                 finish();
             }
