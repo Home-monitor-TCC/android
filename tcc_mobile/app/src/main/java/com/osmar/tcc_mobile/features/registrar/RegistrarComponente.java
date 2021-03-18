@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -78,6 +79,9 @@ public class RegistrarComponente extends AppCompatActivity {
         listView.setAdapter(adaptador);
         listViewTipo.setAdapter(adaptador2);
 
+        UIUtils.setListViewHeightBasedOnItems(listView);
+        UIUtils.setListViewHeightBasedOnItems(listViewTipo);
+
 
         Log.i("depois do ListView","fodas listView");
 
@@ -112,6 +116,26 @@ public class RegistrarComponente extends AppCompatActivity {
             }
         });
 
+
+        listView.setOnTouchListener(new View.OnTouchListener() {
+
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_MOVE) {
+                    return true; // Indicates that this has been handled by you and will not be forwarded further.
+                }
+                return false;
+            }
+        });
+
+        listViewTipo.setOnTouchListener(new View.OnTouchListener() {
+
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_MOVE) {
+                    return true; // Indicates that this has been handled by you and will not be forwarded further.
+                }
+                return false;
+            }
+        });
 
 
         btnConfirmar.setOnClickListener(new View.OnClickListener() {

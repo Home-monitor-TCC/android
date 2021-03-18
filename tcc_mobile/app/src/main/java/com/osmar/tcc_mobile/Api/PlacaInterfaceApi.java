@@ -14,7 +14,7 @@ import retrofit2.http.POST;
 
 public interface PlacaInterfaceApi {
 
-    @GET("/bd")
+    @GET("/db")
     Call<ListaDeComponentes> listarComponentes();
 
     @POST("/componentes/adicionar")

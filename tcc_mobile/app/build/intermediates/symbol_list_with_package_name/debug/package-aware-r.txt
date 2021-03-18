@@ -1740,11 +1740,9 @@ id collapseActionView
 id componente
 id confirm_button
 id constraint
-id constraintBottom
 id constraintInfo
 id constraintLayout
 id constraintLayout2
-id constraintRegistrar
 id container
 id content
 id contentPanel
