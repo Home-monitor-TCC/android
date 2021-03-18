@@ -55,10 +55,51 @@ public class RetrofitRequisicao {
 
             }
         });
+    }
 
+    public void removerComponente(Componente componente, final Context context){
+        PlacaInterfaceApi placaInterfaceApi=retrofit.create(PlacaInterfaceApi.class);
+        Call<ComponenteResposta> call = placaInterfaceApi.removerComponente(componente);
+        call.enqueue(new Callback<ComponenteResposta>() {
+            @Override
+            public void onResponse(Call<ComponenteResposta> call, Response<ComponenteResposta> response) {
+                if(response.isSuccessful()){
+                    ComponenteResposta componenteResposta =response.body();
+                    Toast.makeText(context,"O componente foi apagado com sucesso", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    ApiError apiError=ErrorUtils.parseError(response);
+                    Toast.makeText(context,apiError.message(),Toast.LENGTH_LONG).show();
+                }
+            }
 
+            @Override
+            public void onFailure(Call<ComponenteResposta> call, Throwable t) {
 
+            }
+        });
+    }
 
+    public void editarComponente(Componente componente, final Context context){
+        PlacaInterfaceApi placaInterfaceApi=retrofit.create(PlacaInterfaceApi.class);
+        Call<ComponenteResposta> call = placaInterfaceApi.editarComponente(componente);
+        call.enqueue(new Callback<ComponenteResposta>() {
+            @Override
+            public void onResponse(Call<ComponenteResposta> call, Response<ComponenteResposta> response) {
+                if(response.isSuccessful()){
+                    ComponenteResposta componenteResposta =response.body();
+                    Toast.makeText(context,"O componente foi editado com sucesso", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    ApiError apiError=ErrorUtils.parseError(response);
+                    Toast.makeText(context,apiError.message(),Toast.LENGTH_LONG).show();
+                }
+            }
 
+            @Override
+            public void onFailure(Call<ComponenteResposta> call, Throwable t) {
+
+            }
+        });
     }
 }

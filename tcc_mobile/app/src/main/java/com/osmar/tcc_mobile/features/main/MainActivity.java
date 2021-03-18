@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -21,7 +23,9 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.osmar.tcc_mobile.Adpter.Adpter;
+import com.osmar.tcc_mobile.Api.RetrofitRequisicao;
 import com.osmar.tcc_mobile.ClassesImportadas.RecyclerItemClickListener;
+import com.osmar.tcc_mobile.PopUp.AlertDialogAdComponente;
 import com.osmar.tcc_mobile.R;
 import com.osmar.tcc_mobile.features.config.ConfigActivity;
 import com.osmar.tcc_mobile.features.config.SaveState;
@@ -32,12 +36,20 @@ import com.osmar.tcc_mobile.model.ComponenteButao;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerComponentes;
     private ArrayList<ComponenteButao> arrayComponentes=new ArrayList<>();
     private ImageView imgButtonConfig;
-    SaveState saveState;
+
+
+    //
+    private RetrofitRequisicao retrofitRequisicao;
+    //
+
 
     @Override
     protected void onStart() {
@@ -51,26 +63,37 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"veio do onResume",Toast.LENGTH_LONG).show();
     }
 
+    //
+    public void criarPopUp(){
+        AlertDialogAdComponente alertDialogAdComponente = new AlertDialogAdComponente(this, "Excluir componente", "Você tem certeza que quer excluir este componente ?");
+        AlertDialog.Builder alertDialog = alertDialogAdComponente.getAlertDialog();
+
+        alertDialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //Requisição de excluir componente
+            }
+        });
+
+        alertDialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //Fecha PopUp
+            }
+        });
+
+        alertDialog.create();
+        alertDialog.show();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-
-
-
         //
-        Context context = getApplicationContext();
-
-        saveState = new SaveState(context);
-        Boolean modo = saveState.getState();
-        if(modo == true){
-            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }else{
-            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }
-
+        retrofitRequisicao = new RetrofitRequisicao(getApplicationContext());
         //
+
+
 
         setContentView(R.layout.activity_main);
         imgButtonConfig=findViewById(R.id.imgBtnConfig);

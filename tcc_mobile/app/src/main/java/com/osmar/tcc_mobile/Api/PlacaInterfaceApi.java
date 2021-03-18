@@ -15,10 +15,10 @@ public interface PlacaInterfaceApi {
     Call<ComponenteResposta> adicionarComponente(@Body Componente componente);
 
     @DELETE("/componentes/remover")
-    Call<Componente> removerComponente(@Body Componente componente);
+    Call<ComponenteResposta> removerComponente(@Body Componente componente);
 
     @PATCH("/componentes/editar")
-    Call<Componente> editarComponente(@Body Componente componente);
+    Call<ComponenteResposta> editarComponente(@Body Componente componente);
 
     @PATCH("/componentes/led/acender")
     Call<Componente> acenderComponente(@Body Componente componente);
