@@ -3,9 +3,17 @@ package com.osmar.tcc_mobile.Api;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.google.gson.JsonObject;
 import com.osmar.tcc_mobile.features.main.MainActivity;
 import com.osmar.tcc_mobile.model.Componente;
+import com.osmar.tcc_mobile.model.ComponenteAdpter;
+import com.osmar.tcc_mobile.model.ComponenteAdpterLed;
+import com.osmar.tcc_mobile.model.ComponenteAdpterSensor;
 import com.osmar.tcc_mobile.model.ComponenteResposta;
+import com.osmar.tcc_mobile.model.ListaDeComponentes;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,6 +39,45 @@ public class RetrofitRequisicao {
 
     public void setRetrofit(Retrofit retrofit) {
         this.retrofit = retrofit;
+    }
+
+    public ArrayList<ComponenteAdpter> listarComponentes(){
+
+        PlacaInterfaceApi placaInterfaceApi=retrofit.create(PlacaInterfaceApi.class);
+        Call<ListaDeComponentes> call=placaInterfaceApi.listarComponentes();
+        final ArrayList<ComponenteAdpter> finalListaDeComponentes = new ArrayList<ComponenteAdpter>();
+        call.enqueue(new Callback<ListaDeComponentes>() {
+            @Override
+            public void onResponse(Call<ListaDeComponentes> call, Response<ListaDeComponentes> response) {
+                if(response.isSuccessful()){
+                    ListaDeComponentes lista=response.body();
+                    ComponenteAdpter componenteAdpter;
+                    for(ComponenteAdpterLed componenteAdpterLed : lista.getLeds()){
+                        componenteAdpter=componenteAdpterLed;
+                        finalListaDeComponentes.add(componenteAdpter);
+                    }
+
+                    for(ComponenteAdpterSensor componenteAdpterSensor : lista.getTemperatureSensors()){
+                        componenteAdpter=componenteAdpterSensor;
+                        finalListaDeComponentes.add(componenteAdpter);
+                    }
+
+
+
+                }else{
+
+                    Toast.makeText(context,"deu pau",Toast.LENGTH_LONG).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ListaDeComponentes> call, Throwable t) {
+
+            }
+        });
+
+        return finalListaDeComponentes;
     }
 
     public void criarComponente(Componente componente, final Context context){

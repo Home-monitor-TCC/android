@@ -10,14 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.osmar.tcc_mobile.R;
-import com.osmar.tcc_mobile.model.ComponenteButao;
+import com.osmar.tcc_mobile.model.ComponenteAdpter;
+import com.osmar.tcc_mobile.model.ComponenteAdpterLed;
 
 import java.util.ArrayList;
 
 public class Adpter extends RecyclerView.Adapter<Adpter.MyViewHolder> {
-    private ArrayList<ComponenteButao> listaComponentes;
+    private ArrayList<ComponenteAdpter> listaComponentes;
 
-    public Adpter(ArrayList<ComponenteButao> listaComponentes) {
+    public Adpter(ArrayList<ComponenteAdpter> listaComponentes) {
         this.listaComponentes = listaComponentes;
     }
 
@@ -33,9 +34,9 @@ public class Adpter extends RecyclerView.Adapter<Adpter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        ComponenteButao componente =listaComponentes.get(position);
-        holder.nome_Componente.setText(componente.getNome());
-        holder.tipo.setText(componente.getTipo());
+        ComponenteAdpter componente =listaComponentes.get(position);
+        holder.nome_Componente.setText(componente.getName());
+        holder.tipo.setText(componente.getType());
         holder.imagem_Estado.setImageResource(componente.getImgEstadoResource());
 
     }

@@ -9,11 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.osmar.tcc_mobile.R;
-import com.osmar.tcc_mobile.model.ComponenteButao;
+import com.osmar.tcc_mobile.model.ComponenteAdpterLed;
 
 public class InfoActivity extends AppCompatActivity {
     private ImageView imgVoltar;
-    private ComponenteButao componenteButao;
+    private ComponenteAdpterLed componenteButao;
     private EditText editComponenteName;
     private EditText editComponenteDescricao;
     private TextView txtPinoEscolhido;
@@ -26,11 +26,11 @@ public class InfoActivity extends AppCompatActivity {
         editComponenteName=findViewById(R.id.editTextComponenteNameRegistro2);
         txtPinoEscolhido=findViewById(R.id.txtPinoEscolhidoInfo);
         Bundle dadosComponente =getIntent().getExtras();
-        componenteButao =(ComponenteButao)dadosComponente.getSerializable("componente");
+        componenteButao =(ComponenteAdpterLed)dadosComponente.getSerializable("componente");
 
-        editComponenteName.setText(componenteButao.getNome());
-        editComponenteDescricao.setText(componenteButao.getDescrição());
-        txtPinoEscolhido.setText(componenteButao.getPino().toString());
+        editComponenteName.setText(componenteButao.getName());
+        editComponenteDescricao.setText(componenteButao.getDescription());
+        txtPinoEscolhido.setText(componenteButao.getPin());
         imgVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

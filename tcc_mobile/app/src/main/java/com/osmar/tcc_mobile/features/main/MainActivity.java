@@ -1,49 +1,39 @@
 package com.osmar.tcc_mobile.features.main;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.osmar.tcc_mobile.Adpter.Adpter;
 import com.osmar.tcc_mobile.Api.RetrofitRequisicao;
 import com.osmar.tcc_mobile.ClassesImportadas.RecyclerItemClickListener;
 import com.osmar.tcc_mobile.PopUp.AlertDialogAdComponente;
 import com.osmar.tcc_mobile.R;
 import com.osmar.tcc_mobile.features.config.ConfigActivity;
-import com.osmar.tcc_mobile.features.config.SaveState;
 import com.osmar.tcc_mobile.features.informações.InfoActivity;
 import com.osmar.tcc_mobile.features.registrar.RegistrarComponente;
-import com.osmar.tcc_mobile.model.ComponenteButao;
+import com.osmar.tcc_mobile.model.ComponenteAdpter;
+import com.osmar.tcc_mobile.model.ComponenteAdpterLed;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerComponentes;
-    private ArrayList<ComponenteButao> arrayComponentes=new ArrayList<>();
     private ImageView imgButtonConfig;
+    private ArrayList<ComponenteAdpter> listaComponentes=new ArrayList<ComponenteAdpter>();
+
 
 
     //
@@ -54,14 +44,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        listarComponentes();
         Toast.makeText(getApplicationContext(),"veio do onStart",Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Toast.makeText(getApplicationContext(),"veio do onResume",Toast.LENGTH_LONG).show();
-    }
+
 
     //
     public void criarPopUp(){
@@ -116,9 +103,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        criarComponentes();
+
         recyclerComponentes=findViewById(R.id.recyclerComponentes);
-        Adpter adpter =new Adpter(arrayComponentes);
+        Adpter adpter =new Adpter(listaComponentes);
 
         RecyclerView.LayoutManager layoutManager =new LinearLayoutManager(getApplicationContext());
         recyclerComponentes.setLayoutManager(layoutManager);
@@ -134,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onItemClick(View view, int position) {
                                 Intent intent =new Intent(getApplicationContext(), InfoActivity.class);
 
-                                ComponenteButao componente =arrayComponentes.get(position);
+                                ComponenteAdpter componente =listaComponentes.get(position);
                                 intent.putExtra("componente",componente);
                                 startActivity(intent);
 
@@ -144,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void onLongItemClick(View view, int position) {
-                                
+
 
                             }
 
@@ -163,21 +150,21 @@ public class MainActivity extends AppCompatActivity {
 
     //Metodo de testes para os Componentes
 
-    public void criarComponentes()
+    public void listarComponentes()
     {
-        ComponenteButao componente =new ComponenteButao("Luz da Sala","o led que acende a sala","LED",123456,R.drawable.ic_icon_metro_switch,true);
-        arrayComponentes.add(componente);
 
-        componente =new ComponenteButao("Luz da Cozinha","o led que acende a Cozinha","LED",139784,R.drawable.ic_icon_metro_switch,true);
-        arrayComponentes.add(componente);
+        listaComponentes=retrofitRequisicao.listarComponentes();
 
-        componente =new ComponenteButao("Luz da Casa do Fifi","o led que acende a casa do filardi","LED",193126,R.drawable.ic_icon_metro_switch,true);
-        arrayComponentes.add(componente);
-        componente =new ComponenteButao("Luz do osmose","A toca do osmar tem que ter luz","LED",46556,R.drawable.ic_icon_metro_switch,true);
-        arrayComponentes.add(componente);
-        componente =new ComponenteButao("Luz da Comoda","o led que acende algo","LED",156765,R.drawable.ic_icon_metro_switch,true);
-        arrayComponentes.add(componente);
+        for(int i=0;i<listaComponentes.size();i++){
+            ComponenteAdpter c =listaComponentes.get(i);
+            if(c.getType()==1){
+                c.setImgEstadoResource(R.drawable.ic_icon_metro_switch);
+            }else{
+                c.setImgEstadoResource(R.drawable.ic_icon_open_pencil);
+            }
+            listaComponentes.set(i,c);
 
+        }
 
 
     }
