@@ -36,7 +36,7 @@ public class Adpter extends RecyclerView.Adapter<Adpter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         ComponenteAdpter componente =listaComponentes.get(position);
         holder.nome_Componente.setText(componente.getName());
-        holder.tipo.setText(componente.getType());
+        holder.tipo.setText("Tipo"+componente.getType());
         holder.imagem_Estado.setImageResource(componente.getImgEstadoResource());
 
     }

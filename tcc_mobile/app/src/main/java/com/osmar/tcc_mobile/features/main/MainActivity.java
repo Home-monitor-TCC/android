@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     private LiveData<List<ComponenteAdpter>> listaComponentesObservador;
     //Iremos criar aqui nossa lista que sera atualizada de acordo com oque acontecer na listaMutavel da outra classe
     private List<ComponenteAdpter> listaAtualizaveldeComponentes=new ArrayList<>();
-    public Adpter adpter;
+
 
     public List<ComponenteAdpter> getListaAtualizaveldeComponentes() {
         return listaAtualizaveldeComponentes;
@@ -90,10 +90,58 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(List<ComponenteAdpter> componenteAdpters) {
                 Log.e("TAGcomponenteAdapter", "" + componenteAdpters.size());
                 listaAtualizaveldeComponentes = componenteAdpters;
+                for(int i=0;i<listaAtualizaveldeComponentes.size();i++){
+                    ComponenteAdpter c = listaAtualizaveldeComponentes.get(i);
+                    c.setImgEstadoResource(R.drawable.ic_icon_metro_switch);
+                    listaAtualizaveldeComponentes.set(i,c);
+                }
                 Log.e("TamanhoAdptergfdsfg","" + listaAtualizaveldeComponentes.get(0).getDescription());
                 Log.e("TAGcomponenteatuali", "" + listaAtualizaveldeComponentes.size());
-                adpter =new Adpter((ArrayList<ComponenteAdpter>) listaAtualizaveldeComponentes);
+                Adpter adpter =new Adpter((ArrayList<ComponenteAdpter>) listaAtualizaveldeComponentes);
+                //Tudo parada do recycler
+                recyclerComponentes=findViewById(R.id.recyclerComponentes);
+
+
+                RecyclerView.LayoutManager layoutManager =new LinearLayoutManager(getApplicationContext());
+                recyclerComponentes.setLayoutManager(layoutManager);
+                recyclerComponentes.setHasFixedSize(true);
+                Log.e("atenoadpterdapau","tamanhodalistaque vai pro adpter"+adpter.getItemCount());
+                recyclerComponentes.setAdapter(adpter);
+
+                recyclerComponentes.addOnItemTouchListener(
+                        new RecyclerItemClickListener(
+                                getApplicationContext(),
+                                recyclerComponentes,
+                                new RecyclerItemClickListener.OnItemClickListener() {
+                                    @Override
+                                    public void onItemClick(View view, int position) {
+                                        Intent intent =new Intent(getApplicationContext(), InfoActivity.class);
+
+                                        ComponenteAdpter componente =listaAtualizaveldeComponentes.get(position);
+                                        intent.putExtra("componente",componente);
+                                        startActivity(intent);
+
+
+
+                                    }
+
+                                    @Override
+                                    public void onLongItemClick(View view, int position) {
+
+
+                                    }
+
+                                    @Override
+                                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                                    }
+                                }
+                        )
+
+                );
+                Log.e("Tag Jesus","Tamanho abencoado:"+listaAtualizaveldeComponentes.size());
             }
+
         };
 
 
@@ -130,47 +178,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //Tudo parada do recycler
-        recyclerComponentes=findViewById(R.id.recyclerComponentes);
-        //Log.e("TamanhoAdpter","" + listaAtualizaveldeComponentes.get(0).getDescription());
 
-        RecyclerView.LayoutManager layoutManager =new LinearLayoutManager(getApplicationContext());
-        recyclerComponentes.setLayoutManager(layoutManager);
-        recyclerComponentes.setHasFixedSize(true);
-        Log.e("atenoadpterdapau","tamanhodalistaque vai pro adpter"+adpter.getItemCount());
-        recyclerComponentes.setAdapter(adpter);
-
-        recyclerComponentes.addOnItemTouchListener(
-                new RecyclerItemClickListener(
-                        getApplicationContext(),
-                        recyclerComponentes,
-                        new RecyclerItemClickListener.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(View view, int position) {
-                                Intent intent =new Intent(getApplicationContext(), InfoActivity.class);
-
-                                ComponenteAdpter componente =listaAtualizaveldeComponentes.get(position);
-                                intent.putExtra("componente",componente);
-                                startActivity(intent);
-
-
-
-                            }
-
-                            @Override
-                            public void onLongItemClick(View view, int position) {
-
-
-                            }
-
-                            @Override
-                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                            }
-                        }
-                )
-
-        );
 
 
     }
