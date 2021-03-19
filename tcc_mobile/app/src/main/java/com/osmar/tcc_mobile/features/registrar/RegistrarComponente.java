@@ -39,6 +39,14 @@ public class RegistrarComponente extends AppCompatActivity {
 
     }
 
+    public String[] getPinos() {
+        return pinos;
+    }
+
+    public void setPinos(String[] pinos) {
+        this.pinos = pinos;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

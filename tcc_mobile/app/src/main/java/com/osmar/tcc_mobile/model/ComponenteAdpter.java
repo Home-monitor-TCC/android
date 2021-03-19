@@ -10,6 +10,10 @@ public class ComponenteAdpter implements Serializable {
     protected int pin;
     protected Integer imgEstadoResource;
 
+    public ComponenteAdpter(){
+
+    }
+
     public ComponenteAdpter(String id, String name, String description, int type, int pin, Integer imgEstadoResource) {
         this.id = id;
         this.name = name;

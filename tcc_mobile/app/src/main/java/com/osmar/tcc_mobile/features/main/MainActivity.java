@@ -1,6 +1,12 @@
 package com.osmar.tcc_mobile.features.main;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -8,6 +14,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -26,63 +33,78 @@ import com.osmar.tcc_mobile.model.ComponenteAdpter;
 import com.osmar.tcc_mobile.model.ComponenteAdpterLed;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerComponentes;
     private ImageView imgButtonConfig;
-    private ArrayList<ComponenteAdpter> listaComponentes=new ArrayList<ComponenteAdpter>();
+
+
 
 
 
     //
     private RetrofitRequisicao retrofitRequisicao;
-    //
 
+    //Aqui é nosso obersvador
+    private LiveData<List<ComponenteAdpter>> listaComponentesObservador;
+    //Iremos criar aqui nossa lista que sera atualizada de acordo com oque acontecer na listaMutavel da outra classe
+    private List<ComponenteAdpter> listaAtualizaveldeComponentes=new ArrayList<>();
+    public Adpter adpter;
+
+    public List<ComponenteAdpter> getListaAtualizaveldeComponentes() {
+        return listaAtualizaveldeComponentes;
+    }
+
+    public void setListaAtualizaveldeComponentes(List<ComponenteAdpter> listaAtualizaveldeComponentes) {
+        this.listaAtualizaveldeComponentes = listaAtualizaveldeComponentes;
+    }
 
     @Override
     protected void onStart() {
         super.onStart();
-        listarComponentes();
+
+        listarC();
         Toast.makeText(getApplicationContext(),"veio do onStart",Toast.LENGTH_LONG).show();
     }
 
 
 
     //
-    public void criarPopUp(){
-        AlertDialogAdComponente alertDialogAdComponente = new AlertDialogAdComponente(this, "Excluir componente", "Você tem certeza que quer excluir este componente ?");
-        AlertDialog.Builder alertDialog = alertDialogAdComponente.getAlertDialog();
 
-        alertDialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                //Requisição de excluir componente
-            }
-        });
-
-        alertDialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                //Fecha PopUp
-            }
-        });
-
-        alertDialog.create();
-        alertDialog.show();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        //
         retrofitRequisicao = new RetrofitRequisicao(getApplicationContext());
-        //
-
-
-
         setContentView(R.layout.activity_main);
+
+
+        //é o parametro transmitido no observador que vai ativar o onchanged quando acontecer algo na lista
+        Observer<List<ComponenteAdpter>> listaObservador= new Observer<List<ComponenteAdpter>>() {
+            @Override
+            public void onChanged(List<ComponenteAdpter> componenteAdpters) {
+                Log.e("TAGcomponenteAdapter", "" + componenteAdpters.size());
+                listaAtualizaveldeComponentes = componenteAdpters;
+                Log.e("TamanhoAdptergfdsfg","" + listaAtualizaveldeComponentes.get(0).getDescription());
+                Log.e("TAGcomponenteatuali", "" + listaAtualizaveldeComponentes.size());
+                adpter =new Adpter((ArrayList<ComponenteAdpter>) listaAtualizaveldeComponentes);
+            }
+        };
+
+
+
+
+
+
+        // A gente ta mandando nosso observador observar a lista mutavel
+        listaComponentesObservador=retrofitRequisicao.listMutableLiveData;
+
+        listaComponentesObservador.observe(this, listaObservador);
         imgButtonConfig=findViewById(R.id.imgBtnConfig);
         imgButtonConfig.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //FAB
         FloatingActionButton fab = findViewById(R.id.fabPrincipal);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,12 +128,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
+        //Tudo parada do recycler
         recyclerComponentes=findViewById(R.id.recyclerComponentes);
-        Adpter adpter =new Adpter(listaComponentes);
+        //Log.e("TamanhoAdpter","" + listaAtualizaveldeComponentes.get(0).getDescription());
 
         RecyclerView.LayoutManager layoutManager =new LinearLayoutManager(getApplicationContext());
         recyclerComponentes.setLayoutManager(layoutManager);
         recyclerComponentes.setHasFixedSize(true);
+        Log.e("atenoadpterdapau","tamanhodalistaque vai pro adpter"+adpter.getItemCount());
         recyclerComponentes.setAdapter(adpter);
 
         recyclerComponentes.addOnItemTouchListener(
@@ -121,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onItemClick(View view, int position) {
                                 Intent intent =new Intent(getApplicationContext(), InfoActivity.class);
 
-                                ComponenteAdpter componente =listaComponentes.get(position);
+                                ComponenteAdpter componente =listaAtualizaveldeComponentes.get(position);
                                 intent.putExtra("componente",componente);
                                 startActivity(intent);
 
@@ -148,25 +176,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //Metodo de testes para os Componentes
 
-    public void listarComponentes()
+
+    public void listarC()
     {
+         retrofitRequisicao.listarComponentes();
+         Log.e("tamanhoLista", "tamanho"+listaAtualizaveldeComponentes.size());
+    }
 
-        listaComponentes=retrofitRequisicao.listarComponentes();
 
-        for(int i=0;i<listaComponentes.size();i++){
-            ComponenteAdpter c =listaComponentes.get(i);
-            if(c.getType()==1){
-                c.setImgEstadoResource(R.drawable.ic_icon_metro_switch);
-            }else{
-                c.setImgEstadoResource(R.drawable.ic_icon_open_pencil);
+    public void criarPopUp(){
+        AlertDialogAdComponente alertDialogAdComponente = new AlertDialogAdComponente(this, "Excluir componente", "Você tem certeza que quer excluir este componente ?");
+        AlertDialog.Builder alertDialog = alertDialogAdComponente.getAlertDialog();
+
+        alertDialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //Requisição de excluir componente
             }
-            listaComponentes.set(i,c);
+        });
 
-        }
+        alertDialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //Fecha PopUp
+            }
+        });
 
-
+        alertDialog.create();
+        alertDialog.show();
     }
 
 

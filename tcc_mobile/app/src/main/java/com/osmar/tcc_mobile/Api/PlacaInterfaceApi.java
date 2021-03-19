@@ -5,6 +5,8 @@ import com.osmar.tcc_mobile.model.Componente;
 import com.osmar.tcc_mobile.model.ComponenteResposta;
 import com.osmar.tcc_mobile.model.ListaDeComponentes;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -16,6 +18,9 @@ public interface PlacaInterfaceApi {
 
     @GET("/db")
     Call<ListaDeComponentes> listarComponentes();
+
+    @GET("/componentes/pinos")
+    Call<List<Integer>> listarPinos();
 
     @POST("/componentes/adicionar")
     Call<ComponenteResposta> adicionarComponente(@Body Componente componente);

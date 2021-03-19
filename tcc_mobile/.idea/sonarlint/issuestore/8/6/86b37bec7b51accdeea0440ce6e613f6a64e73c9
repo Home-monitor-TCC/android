@@ -1,0 +1,21 @@
+
+=
+java:S1185#"(Remove this method to simply inherit it.(Ίρ=
+W	java:S125―"<This block of commented-out lines of code should be removed.(ΐµ®γόÿÿÿÿ
+V	java:S110"<This class has 9 parents which is greater than 5 authorized.(σύÿÿÿÿ
+o
+java:S2293E"YReplace the type specification in this constructor call with the diamond operator ("<>").(…‡ÿ«
+J
+java:S1128"4Remove this unused import 'android.content.Context'.(©Κ‰θ
+]
+java:S1126ƒ"AReplace this if-then-else statement by a single return statement.(«‡ΐόϊÿÿÿÿ
+q
+java:S1450"[Remove the "btnConfirmar" field and declare it as a local variable in the relevant methods.(¥υσ΅
+7
+java:S1116 "Remove this empty statement.(ρτÒζϋÿÿÿÿ
+]
+java:S1126"AReplace this if-then-else statement by a single return statement.(«‡ΐόϊÿÿÿÿ
+k
+java:S1450"VRemove the "btnSair" field and declare it as a local variable in the relevant methods.(Ϋ¦ύ]
+t
+java:S2293L"YReplace the type specification in this constructor call with the diamond operator ("<>").(γΊ‰‡ÿÿÿÿÿ

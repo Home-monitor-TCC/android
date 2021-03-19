@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\osmar\\Desktop\\Tcc-Github\\android\\tcc_mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
+            "outputFile": "/Users/luccafilizzola/Desktop/android/android/tcc_mobile/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\osmar\\.gradle\\caches\\transforms-2\\files-2.1\\be6327719512c19af6e3dfcc948c3a09\\appcompat-1.2.0\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "/Users/luccafilizzola/.gradle/caches/transforms-2/files-2.1/be6327719512c19af6e3dfcc948c3a09/appcompat-1.2.0/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
