@@ -30,7 +30,7 @@ public class InfoActivity extends AppCompatActivity {
 
         editComponenteName.setText(componenteButao.getName());
         editComponenteDescricao.setText(componenteButao.getDescription());
-        txtPinoEscolhido.setText(componenteButao.getPin());
+        txtPinoEscolhido.setText(""+componenteButao.getPin());
         imgVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

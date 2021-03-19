@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
+        listaAtualizaveldeComponentes.clear();
         listarC();
         Toast.makeText(getApplicationContext(),"veio do onStart",Toast.LENGTH_LONG).show();
     }
@@ -88,15 +88,14 @@ public class MainActivity extends AppCompatActivity {
         Observer<List<ComponenteAdpter>> listaObservador= new Observer<List<ComponenteAdpter>>() {
             @Override
             public void onChanged(List<ComponenteAdpter> componenteAdpters) {
-                Log.e("TAGcomponenteAdapter", "" + componenteAdpters.size());
+
                 listaAtualizaveldeComponentes = componenteAdpters;
                 for(int i=0;i<listaAtualizaveldeComponentes.size();i++){
                     ComponenteAdpter c = listaAtualizaveldeComponentes.get(i);
                     c.setImgEstadoResource(R.drawable.ic_icon_metro_switch);
                     listaAtualizaveldeComponentes.set(i,c);
                 }
-                Log.e("TamanhoAdptergfdsfg","" + listaAtualizaveldeComponentes.get(0).getDescription());
-                Log.e("TAGcomponenteatuali", "" + listaAtualizaveldeComponentes.size());
+
                 Adpter adpter =new Adpter((ArrayList<ComponenteAdpter>) listaAtualizaveldeComponentes);
                 //Tudo parada do recycler
                 recyclerComponentes=findViewById(R.id.recyclerComponentes);
@@ -105,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 RecyclerView.LayoutManager layoutManager =new LinearLayoutManager(getApplicationContext());
                 recyclerComponentes.setLayoutManager(layoutManager);
                 recyclerComponentes.setHasFixedSize(true);
-                Log.e("atenoadpterdapau","tamanhodalistaque vai pro adpter"+adpter.getItemCount());
+
                 recyclerComponentes.setAdapter(adpter);
 
                 recyclerComponentes.addOnItemTouchListener(
@@ -139,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                         )
 
                 );
-                Log.e("Tag Jesus","Tamanho abencoado:"+listaAtualizaveldeComponentes.size());
+
             }
 
         };
@@ -188,8 +187,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void listarC()
     {
+
          retrofitRequisicao.listarComponentes();
-         Log.e("tamanhoLista", "tamanho"+listaAtualizaveldeComponentes.size());
+
     }
 
 

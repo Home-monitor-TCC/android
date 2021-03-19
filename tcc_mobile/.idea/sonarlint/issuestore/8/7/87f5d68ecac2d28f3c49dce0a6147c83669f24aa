@@ -1,8 +1,8 @@
 
-–
-java:S1319"{The type of the "listaComponentes" object should be an interface such as "List" rather than the implementation "ArrayList".(ı«òáûÿÿÿÿ
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(™Ô¬™ıÿÿÿÿ
 f
 java:S1128"KRemove this unused import 'com.osmar.tcc_mobile.model.ComponenteAdpterLed'.(ÑÊùôşÿÿÿÿ
 t	java:S1162"ZRename this field "nome_Componente" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉŠ’úÿÿÿÿ
+–
+java:S1319"{The type of the "listaComponentes" object should be an interface such as "List" rather than the implementation "ArrayList".(ı«òáûÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(™Ô¬™ıÿÿÿÿ
 m	java:S1164"XRename this field "imagem_Estado" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ¸—
