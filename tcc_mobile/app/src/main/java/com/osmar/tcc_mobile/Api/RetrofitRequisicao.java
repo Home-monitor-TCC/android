@@ -27,8 +27,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitRequisicao {
     private static Retrofit retrofit;
     private Context context;
+
     private List<ComponenteAdpter> listaDeComponentes=new ArrayList<>();
     public MutableLiveData<List<ComponenteAdpter>> listMutableLiveData=new MutableLiveData<List<ComponenteAdpter>>();
+
+
+    public MutableLiveData<List<String>> listMutableLiveDataPinos=new MutableLiveData<>();
+    private List<String> listaDePinos=new ArrayList<>();
+
+
+
 
     public List<ComponenteAdpter> getListaDeComponentes() {
         return listaDeComponentes;
@@ -40,7 +48,7 @@ public class RetrofitRequisicao {
 
     public RetrofitRequisicao(Context context){
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.15.23:2233")
+                .baseUrl("http://192.168.0.228:2233")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         this.context=context;
@@ -52,6 +60,35 @@ public class RetrofitRequisicao {
 
     public void setRetrofit(Retrofit retrofit) {
         this.retrofit = retrofit;
+    }
+
+    public void listarPinos(){
+        PlacaInterfaceApi placaInterfaceApi=retrofit.create(PlacaInterfaceApi.class);
+        Call<List<Integer>> call = placaInterfaceApi.listarPinos();
+        call.enqueue(new Callback<List<Integer>>() {
+            @Override
+            public void onResponse(Call<List<Integer>> call, Response<List<Integer>> response) {
+                if(response.isSuccessful()){
+                    for(int i=0;i<response.body().size();i++){
+                        listaDePinos.add(response.body().get(i)+"");
+                    }
+
+                    listMutableLiveDataPinos.setValue(listaDePinos);
+
+                }else{
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Integer>> call, Throwable t) {
+
+            }
+        });
+
+
+
+
     }
 
     public void listarComponentes(){
@@ -105,6 +142,11 @@ public class RetrofitRequisicao {
 
     public void criarComponente(Componente componente, final Context context){
 
+        Log.e("A Pino", "" + componente.getPin());
+        Log.e("A type", "" + componente.getType());
+        Log.e("A name", "" + componente.getName());
+        Log.e("A descri", "" + componente.getDescription());
+
         PlacaInterfaceApi placaInterfaceApi=retrofit.create(PlacaInterfaceApi.class);
         Call<ComponenteResposta> call = placaInterfaceApi.adicionarComponente(componente);
         call.enqueue(new Callback<ComponenteResposta>() {
@@ -127,7 +169,8 @@ public class RetrofitRequisicao {
         });
     }
 
-    public void removerComponente(Componente componente, final Context context){
+    /*
+    public void removerComponente(ComponenteAdpter componente, final Context context){
         PlacaInterfaceApi placaInterfaceApi=retrofit.create(PlacaInterfaceApi.class);
         Call<ComponenteResposta> call = placaInterfaceApi.removerComponente(componente);
         call.enqueue(new Callback<ComponenteResposta>() {
@@ -147,9 +190,13 @@ public class RetrofitRequisicao {
             public void onFailure(Call<ComponenteResposta> call, Throwable t) {
 
             }
-        });
-    }
 
+
+        });
+
+
+    }
+*/
     public void editarComponente(Componente componente, final Context context){
         PlacaInterfaceApi placaInterfaceApi=retrofit.create(PlacaInterfaceApi.class);
         Call<ComponenteResposta> call = placaInterfaceApi.editarComponente(componente);
@@ -173,26 +220,6 @@ public class RetrofitRequisicao {
         });
     }
 
-    /*public List<Integer> listarPinos(){
 
-
-        PlacaInterfaceApi placaInterfaceApi=retrofit.create(PlacaInterfaceApi.class);
-        Call<List<Integer>> call = placaInterfaceApi.listarPinos();
-        call.enqueue(new Callback<List<Integer>>() {
-            @Override
-            public void onResponse(Call<List<Integer>> call, Response<List<Integer>> response) {
-
-                List<Integer> lista =new ArrayList<>();
-
-
-            }
-
-            @Override
-            public void onFailure(Call<List<Integer>> call, Throwable t) {
-
-            }
-        });
-      return lis;
-    }*/
 
 }

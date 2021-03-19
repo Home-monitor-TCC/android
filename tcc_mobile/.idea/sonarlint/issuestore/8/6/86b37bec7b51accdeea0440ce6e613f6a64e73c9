@@ -1,21 +1,31 @@
 
-=
-java:S1185#"(Remove this method to simply inherit it.(ºŠñ=
-W	java:S125¯"<This block of commented-out lines of code should be removed.(Àµ®ãüÿÿÿÿ
-V	java:S110"<This class has 9 parents which is greater than 5 authorized.(óœıÿÿÿÿ
-o
-java:S2293E"YReplace the type specification in this constructor call with the diamond operator ("<>").(…‡ÿ«
-J
-java:S1128"4Remove this unused import 'android.content.Context'.(©Ê‰è
-]
-java:S1126ƒ"AReplace this if-then-else statement by a single return statement.(«‡Àüúÿÿÿÿ
+>
+java:S11165"Remove this empty statement.(Åñ­õşÿÿÿÿ8õïÜà„/
 q
-java:S1450"[Remove the "btnConfirmar" field and declare it as a local variable in the relevant methods.(¥õó¡
-7
-java:S1116 "Remove this empty statement.(ñôÒæûÿÿÿÿ
-]
-java:S1126"AReplace this if-then-else statement by a single return statement.(«‡Àüúÿÿÿÿ
+java:S1450%"[Remove the "btnConfirmar" field and declare it as a local variable in the relevant methods.(¥õó¡
+V	java:S110"<This class has 9 parents which is greater than 5 authorized.(óœıÿÿÿÿ
+e
+java:S1854T"CRemove this useless assignment to local variable "listaObservador".(öÎÿ÷ıÿÿÿÿ8ÖçÑá„/
+`
+java:S1068!">Remove this unused "listaComponentesObservador" private field.(ÖŠ¸›ûÿÿÿÿ8åÁá„/
+m
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(…‡ÿ«
+W	java:S125Ê"<This block of commented-out lines of code should be removed.(Àµ®ãüÿÿÿÿ
+J
+java:S1125;"(Remove the literal "true" boolean value.(Ğèèåÿÿÿÿÿ8¢ã°à„/
 k
-java:S1450"VRemove the "btnSair" field and declare it as a local variable in the relevant methods.(Û¦ı]
-t
-java:S2293L"YReplace the type specification in this constructor call with the diamond operator ("<>").(ãº‰‡ÿÿÿÿÿ
+java:S1450&"VRemove the "btnSair" field and declare it as a local variable in the relevant methods.(Û¦ı]
+V
+java:S1481T"4Remove this unused "listaObservador" local variable.(öÎÿ÷ıÿÿÿÿ8ÖçÑá„/
+y
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ãº‰‡ÿÿÿÿÿ8¢ã°à„/
+]
+java:S1126"AReplace this if-then-else statement by a single return statement.(«‡Àüúÿÿÿÿ
+]
+java:S1126¨"AReplace this if-then-else statement by a single return statement.(«‡Àüúÿÿÿÿ
+j
+java:S1128"HRemove this unused import 'com.osmar.tcc_mobile.model.ComponenteAdpter'.(¯ Ş“şÿÿÿÿ8úòÆá„/
+K
+java:S11259")Remove the literal "false" boolean value.(†Ë“ıÿÿÿÿ8¢ã°à„/
+S
+java:S1128"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8è‹ˆâ„/

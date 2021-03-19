@@ -1,7 +1,10 @@
 package com.osmar.tcc_mobile.features.informações;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -17,6 +20,19 @@ public class InfoActivity extends AppCompatActivity {
     private EditText editComponenteName;
     private EditText editComponenteDescricao;
     private TextView txtPinoEscolhido;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        SharedPreferences estado = getSharedPreferences("preferences", Context.MODE_PRIVATE);
+        if(estado.getBoolean("bkey", true) == false){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }else if(estado.getBoolean("bkey", true) == true){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

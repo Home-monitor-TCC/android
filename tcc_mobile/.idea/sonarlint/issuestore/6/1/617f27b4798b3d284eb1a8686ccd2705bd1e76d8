@@ -1,42 +1,46 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÂÅŒ—
-Ÿ
-java:S1186“"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚¤¨Ú8òÐˆ¼„/
-M
-java:S1128	"7Remove this unused import 'com.google.gson.JsonObject'.(µÊ´½
+i
+java:S1854Â"FRemove this useless assignment to local variable "componenteResposta".(£“´õÿÿÿÿÿ8òÐˆ¼„/
 u
 java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¢ßÒ8èù£¿„/
-Z
-java:S1481 "7Remove this unused "componenteResposta" local variable.(£“´õÿÿÿÿÿ8òÐˆ¼„/
-i
-java:S1854 "FRemove this useless assignment to local variable "componenteResposta".(£“´õÿÿÿÿÿ8òÐˆ¼„/
-Z
-java:S1481‰"7Remove this unused "componenteResposta" local variable.(£“´õÿÿÿÿÿ8òÐˆ¼„/
-Y	java:S125°"<This block of commented-out lines of code should be removed.(›‡¸8˜Ý½„/
-P
-java:S22096"5Change this instance-reference to a static reference.(Ž½Þ™þÿÿÿÿ
-ž
-java:S1186|"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚¤¨Ú8òÐˆ¼„/
-i
-java:S1854‰"FRemove this useless assignment to local variable "componenteResposta".(£“´õÿÿÿÿÿ8òÐˆ¼„/
-P
-java:S22092"5Change this instance-reference to a static reference.(•çîðüÿÿÿÿ
-Ÿ
-java:S1186ª"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚¤¨Ú8òÐˆ¼„/
-h
-java:S1854r"FRemove this useless assignment to local variable "componenteResposta".(£“´õÿÿÿÿÿ8òÐˆ¼„/
-Y
-java:S1481r"7Remove this unused "componenteResposta" local variable.(£“´õÿÿÿÿÿ8òÐˆ¼„/
-£
-java:S1186d"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(™§çùøÿÿÿÿ8òÐˆ¼„/
-Q
-java:S26966"6Make the enclosing method "static" or remove this set.(Ž½Þ™þÿÿÿÿ
 {
 java:S1104"_Make listMutableLiveData a static final constant or non-public and provide accessors if needed.(¢ßÒ8…Î­¿„/
+¤
+java:S1186†"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(™§çùøÿÿÿÿ8òÐˆ¼„/
+
+java:S1104 "dMake listMutableLiveDataPinos a static final constant or non-public and provide accessors if needed.(†€²ó8½‰ßá„/
+P
+java:S2209/"5Change this instance-reference to a static reference.(’Ü©Ãùÿÿÿÿ
+Z
+java:S1481Â"7Remove this unused "componenteResposta" local variable.(£“´õÿÿÿÿÿ8òÐˆ¼„/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÂÅŒ—
+Ÿ
+java:S1186µ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚¤¨Ú8òÐˆ¼„/
+Ÿ
+java:S1186ž"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚¤¨Ú8òÐˆ¼„/
+Q
+java:S2696;"6Make the enclosing method "static" or remove this set.(Ž½Þ™þÿÿÿÿ
+Ÿ
+java:S1186Ì"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚¤¨Ú8òÐˆ¼„/
+i
+java:S1854«"FRemove this useless assignment to local variable "componenteResposta".(£“´õÿÿÿÿÿ8òÐˆ¼„/
 b
 java:S1128
 "LRemove this unused import 'com.osmar.tcc_mobile.features.main.MainActivity'.(¶§ã’
+ž
+java:S1186Q"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(öƒœ¬8Ã§èá„/
 @
-java:S3010*"%Remove this assignment of "retrofit".(’Ü©Ãùÿÿÿÿ
+java:S3010/"%Remove this assignment of "retrofit".(’Ü©Ãùÿÿÿÿ
+Z
+java:S1481«"7Remove this unused "componenteResposta" local variable.(£“´õÿÿÿÿÿ8òÐˆ¼„/
 P
-java:S2209*"5Change this instance-reference to a static reference.(’Ü©Ãùÿÿÿÿ
+java:S2209;"5Change this instance-reference to a static reference.(Ž½Þ™þÿÿÿÿ
+i
+java:S1854”"FRemove this useless assignment to local variable "componenteResposta".(£“´õÿÿÿÿÿ8òÐˆ¼„/
+P
+java:S22097"5Change this instance-reference to a static reference.(•çîðüÿÿÿÿ
+M
+java:S1128	"7Remove this unused import 'com.google.gson.JsonObject'.(µÊ´½
+Z
+java:S1481”"7Remove this unused "componenteResposta" local variable.(£“´õÿÿÿÿÿ8òÐˆ¼„/
+E	java:S108K")Either remove or fill this block of code.(å¥ž‡8Œªýá„/

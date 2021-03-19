@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 listaAtualizaveldeComponentes = componenteAdpters;
                 for(int i=0;i<listaAtualizaveldeComponentes.size();i++){
                     ComponenteAdpter c = listaAtualizaveldeComponentes.get(i);
+
                     c.setImgEstadoResource(R.drawable.ic_icon_metro_switch);
                     listaAtualizaveldeComponentes.set(i,c);
                 }
@@ -200,13 +201,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void criarPopUp(){
+    public void criarPopUp(final RetrofitRequisicao retrofitDoPop, ComponenteAdpter Componente){
         AlertDialogAdComponente alertDialogAdComponente = new AlertDialogAdComponente(this, "Excluir componente", "Você tem certeza que quer excluir este componente ?");
         AlertDialog.Builder alertDialog = alertDialogAdComponente.getAlertDialog();
 
         alertDialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                //Requisição de excluir componente
+                //retrofitDoPop.removerComponente(Componente);
             }
         });
 

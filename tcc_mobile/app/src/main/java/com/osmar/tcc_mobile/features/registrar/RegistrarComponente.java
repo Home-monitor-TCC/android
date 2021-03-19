@@ -2,6 +2,8 @@ package com.osmar.tcc_mobile.features.registrar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -15,12 +17,23 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.osmar.tcc_mobile.Api.RetrofitRequisicao;
 import com.osmar.tcc_mobile.R;
 import com.osmar.tcc_mobile.model.Componente;
+import com.osmar.tcc_mobile.model.ComponenteAdpter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RegistrarComponente extends AppCompatActivity {
+
+    //Aqui é nosso obersvador
+    private LiveData<List<String>> listaComponentesObservadoPinos;
+    //Iremos criar aqui nossa lista que sera atualizada de acordo com oque acontecer na listaMutavel da outra classe
+    private List<String> listaAtualizaveldePinos=new ArrayList<>();
+
     private ImageView btnConfirmar;
     private ImageView btnSair;
     private RetrofitRequisicao retrofitRequisicao;
@@ -31,12 +44,16 @@ public class RegistrarComponente extends AppCompatActivity {
     private ListView listView;
     private ListView listViewTipo;
     private String[] tipo={"Led", "Temperatura"};
-    private String[] pinos={"1", "2"};;
+
 
     @Override
     protected void onStart() {
         super.onStart();
         //Puxar os pinos disponiveis aqui
+        ;
+        listaAtualizaveldePinos.clear();
+        retrofitRequisicao.listarPinos();
+        /*
         SharedPreferences estado = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         if(estado.getBoolean("bkey", true) == false){
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -44,15 +61,10 @@ public class RegistrarComponente extends AppCompatActivity {
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
 
+         */
+
     }
 
-    public String[] getPinos() {
-        return pinos;
-    }
-
-    public void setPinos(String[] pinos) {
-        this.pinos = pinos;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,30 +84,46 @@ public class RegistrarComponente extends AppCompatActivity {
         listView=findViewById(R.id.list_Pinos);
         listViewTipo=findViewById(R.id.list_Tipo);
 
+         Observer<List<String>> listaObservadorPinos= new Observer<List<String>>() {
+             @Override
+             public void onChanged(List<String> strings) {
+                 listaAtualizaveldePinos=strings;
+                 ArrayAdapter<String> adaptador = new ArrayAdapter<String>(
+                         getApplicationContext(),
+                         android.R.layout.simple_list_item_1,
+                         android.R.id.text1,
+                         listaAtualizaveldePinos
+                 );
 
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(
-                getApplicationContext(),
-                android.R.layout.simple_list_item_1,
-                android.R.id.text1,
-                pinos
-        );
 
+
+
+
+
+
+                 listView.setAdapter(adaptador);
+
+
+                 UIUtils.setListViewHeightBasedOnItems(listView);
+
+
+
+             }
+         } ;
         ArrayAdapter<String> adaptador2 = new ArrayAdapter<String>(
                 getApplicationContext(),
                 android.R.layout.simple_list_item_1,
                 android.R.id.text1,
                 tipo
         );
-
-
-
-
-
-        listView.setAdapter(adaptador);
         listViewTipo.setAdapter(adaptador2);
 
-        UIUtils.setListViewHeightBasedOnItems(listView);
         UIUtils.setListViewHeightBasedOnItems(listViewTipo);
+        listaComponentesObservadoPinos=retrofitRequisicao.listMutableLiveDataPinos;
+        listaComponentesObservadoPinos.observe(this,listaObservadorPinos);
+
+
+
 
 
         Log.i("depois do ListView","fodas listView");
@@ -177,7 +205,7 @@ public class RegistrarComponente extends AppCompatActivity {
                 }
 
 
-                Componente componente =new Componente(nome,des,pino,tipo2);
+                Componente componente =new Componente(nome,des,tipo2,pino);
                 retrofitRequisicao.criarComponente(componente,getApplicationContext());
                 //finish();
             }

@@ -33,3 +33,9 @@ Fapp/src/main/java/com/osmar/tcc_mobile/features/main/MainActivity.java,8/8/889
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 i
 9app/src/main/java/com/osmar/tcc_mobile/Adpter/Adpter.java,8/7/87f5d68ecac2d28f3c49dce0a6147c83669f24aa
+j
+:app/src/main/java/com/osmar/tcc_mobile/Api/ErrorUtils.java,7/9/79e9492842739794e440d5e5ac0983bbf8ab4baf
+u
+Eapp/src/main/java/com/osmar/tcc_mobile/features/config/SaveState.java,5/4/54c98aa92d73923bd944f2dc527925c85b4a9082
+z
+Japp/src/main/java/com/osmar/tcc_mobile/features/config/ConfigActivity.java,5/7/57956b75b6c396ddf15ac1e7a617f3fa429ebbfd

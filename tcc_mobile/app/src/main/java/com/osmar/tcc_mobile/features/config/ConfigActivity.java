@@ -22,6 +22,14 @@ public class ConfigActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_config);
+        imageViewVoltar=findViewById(R.id.imgVoltar2);
+        fundo_app=findViewById(R.id.switchTema);
 
         fundo_app.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -41,14 +49,6 @@ public class ConfigActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_config);
-        imageViewVoltar=findViewById(R.id.imgVoltar2);
-        fundo_app=findViewById(R.id.switchTema);
 
         imageViewVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
