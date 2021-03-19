@@ -16,6 +16,7 @@ public class SaveState {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("bkey", b);
         editor.apply();
+        editor.commit();
     }
 
     public Boolean getState(){

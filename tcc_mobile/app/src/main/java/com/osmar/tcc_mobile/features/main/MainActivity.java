@@ -1,18 +1,17 @@
 package com.osmar.tcc_mobile.features.main;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LifecycleOwner;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,21 +26,19 @@ import com.osmar.tcc_mobile.ClassesImportadas.RecyclerItemClickListener;
 import com.osmar.tcc_mobile.PopUp.AlertDialogAdComponente;
 import com.osmar.tcc_mobile.R;
 import com.osmar.tcc_mobile.features.config.ConfigActivity;
+import com.osmar.tcc_mobile.features.config.SaveState;
 import com.osmar.tcc_mobile.features.informações.InfoActivity;
 import com.osmar.tcc_mobile.features.registrar.RegistrarComponente;
 import com.osmar.tcc_mobile.model.ComponenteAdpter;
-import com.osmar.tcc_mobile.model.ComponenteAdpterLed;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerComponentes;
     private ImageView imgButtonConfig;
+
 
 
 
@@ -67,9 +64,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        SharedPreferences estado = getSharedPreferences("preferences", Context.MODE_PRIVATE);
+        if(estado.getBoolean("bkey", true) == false){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }else if(estado.getBoolean("bkey", true) == true){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
         listaAtualizaveldeComponentes.clear();
         listarC();
-        Toast.makeText(getApplicationContext(),"veio do onStart",Toast.LENGTH_LONG).show();
     }
 
 
@@ -80,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         retrofitRequisicao = new RetrofitRequisicao(getApplicationContext());
         setContentView(R.layout.activity_main);
 
@@ -191,6 +196,8 @@ public class MainActivity extends AppCompatActivity {
          retrofitRequisicao.listarComponentes();
 
     }
+
+
 
 
     public void criarPopUp(){
