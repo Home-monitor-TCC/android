@@ -1715,7 +1715,7 @@ id beginning
 id blocking
 id bottom
 id bounce
-id btnConfirmarRegistro2
+id btnOnOffLed
 id btnSairRegistrar2
 id btnSalvarLed
 id buttonPanel

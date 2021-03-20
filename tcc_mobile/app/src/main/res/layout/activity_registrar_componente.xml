@@ -144,7 +144,7 @@
                 app:srcCompat="@drawable/ic_icon_awesome_times" />
 
             <ImageView
-                android:id="@+id/btnConfirmarRegistro2"
+                android:id="@+id/btnOnOffLed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="210dp"

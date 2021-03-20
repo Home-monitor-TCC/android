@@ -1714,7 +1714,7 @@ int id beginning 0x7f080058
 int id blocking 0x7f080059
 int id bottom 0x7f08005a
 int id bounce 0x7f08005b
-int id btnConfirmarRegistro2 0x7f08005c
+int id btnOnOffLed 0x7f08005c
 int id btnSairRegistrar2 0x7f08005d
 int id btnSalvarLed 0x7f08005e
 int id buttonPanel 0x7f08005f

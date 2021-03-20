@@ -25,6 +25,7 @@ public class InfoActivity extends AppCompatActivity {
     private EditText editComponenteDescricao;
     private TextView txtPinoEscolhido;
     private Button  btnSalvar;
+    private ImageView btnOnOff;
     private RetrofitRequisicao retrofitRequisicao;
 
     @Override
@@ -48,6 +49,7 @@ public class InfoActivity extends AppCompatActivity {
         editComponenteName=findViewById(R.id.editTextComponenteNameRegistro2);
         txtPinoEscolhido=findViewById(R.id.txtPinoEscolhidoInfo);
         btnSalvar=findViewById(R.id.btnSalvarLed);
+        btnOnOff = findViewById(R.id.btnOnOffLed);
         retrofitRequisicao=new RetrofitRequisicao(getApplicationContext());
         Bundle dadosComponente =getIntent().getExtras();
         componenteButao =(ComponenteAdpterLed)dadosComponente.getSerializable("componente");
@@ -62,6 +64,18 @@ public class InfoActivity extends AppCompatActivity {
             }
         });
 
+
+        btnOnOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(componenteButao.getState() == true){
+                    retrofitRequisicao.apagarComponente(componenteButao, getApplicationContext());
+                }else{
+                    retrofitRequisicao.acenderComponente(componenteButao, getApplicationContext());
+                }
+
+            }
+        });
 
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override

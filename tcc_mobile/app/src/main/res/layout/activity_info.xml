@@ -133,7 +133,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/btnConfirmarRegistro2"
+            android:id="@+id/btnOnOffLed"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -69,7 +68,7 @@ public class RegistrarComponente extends AppCompatActivity {
         setContentView(R.layout.activity_registrar_componente);
 
 
-        btnConfirmar=findViewById(R.id.btnConfirmarRegistro2);
+        btnConfirmar=findViewById(R.id.btnOnOffLed);
         editTextComponenteName=findViewById(R.id.editTextComponenteNameRegistro2);
         editTextComponenteDes=findViewById(R.id.editTextComponenteDescricaoRegistro2);
         txtComponentePino=findViewById(R.id.txtPinoEscolhidoRegistar2);

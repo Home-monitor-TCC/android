@@ -217,6 +217,46 @@ public class RetrofitRequisicao {
         });
     }
 
+    public void acenderComponente(ComponenteAdpterLed componenteAdpter, final Context context){
+        PlacaInterfaceApi placaInterfaceApi = retrofit.create(PlacaInterfaceApi.class);
+        Call<ComponenteAdpterLed> call = placaInterfaceApi.acenderComponente(componenteAdpter);
+        call.enqueue(new Callback<ComponenteAdpterLed>() {
+            @Override
+            public void onResponse(Call<ComponenteAdpterLed> call, Response<ComponenteAdpterLed> response) {
+                if (response.isSuccessful()){
+                    Toast.makeText(context, "Componente foi acesso com sucesso", Toast.LENGTH_LONG).show();
+                }else{
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ComponenteAdpterLed> call, Throwable t) {
+
+            }
+        });
+    }
+
+    public void apagarComponente(ComponenteAdpterLed componenteAdpter, final Context context){
+        PlacaInterfaceApi placaInterfaceApi = retrofit.create(PlacaInterfaceApi.class);
+        Call<ComponenteAdpterLed> call = placaInterfaceApi.apagarComponente(componenteAdpter);
+        call.enqueue(new Callback<ComponenteAdpterLed>() {
+            @Override
+            public void onResponse(Call<ComponenteAdpterLed> call, Response<ComponenteAdpterLed> response) {
+                if (response.isSuccessful()){
+                    Toast.makeText(context, "Componente foi apagado com sucesso", Toast.LENGTH_LONG).show();
+                }else{
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ComponenteAdpterLed> call, Throwable t) {
+
+            }
+        });
+    }
+
 
 
 }
