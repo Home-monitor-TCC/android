@@ -14,6 +14,24 @@ public class ComponenteAdpter implements Serializable {
 
     }
 
+
+    public ComponenteAdpter(String id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+
+    public ComponenteAdpter(String id) {
+        this.id = id;
+    }
+
+    public ComponenteAdpter(String name, String description, int type, int pin) {
+        this.name = name;
+        this.description = description;
+        this.type = type;
+        this.pin = pin;
+    }
+
     public ComponenteAdpter(String id, String name, String description, int type, int pin, Integer imgEstadoResource) {
         this.id = id;
         this.name = name;

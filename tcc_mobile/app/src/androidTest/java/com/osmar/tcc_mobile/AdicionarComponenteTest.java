@@ -1,26 +1,15 @@
 package com.osmar.tcc_mobile;
 
-import com.osmar.tcc_mobile.Api.PlacaInterfaceApi;
-import com.osmar.tcc_mobile.model.Componente;
-
 
 import junit.framework.TestCase;
 
 
-import org.hamcrest.core.Is;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 import static org.hamcrest.core.Is.is;
 

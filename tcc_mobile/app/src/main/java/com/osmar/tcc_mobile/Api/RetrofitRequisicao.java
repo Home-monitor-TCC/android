@@ -6,13 +6,9 @@ import android.widget.Toast;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.google.gson.JsonObject;
-import com.osmar.tcc_mobile.features.main.MainActivity;
-import com.osmar.tcc_mobile.model.Componente;
 import com.osmar.tcc_mobile.model.ComponenteAdpter;
 import com.osmar.tcc_mobile.model.ComponenteAdpterLed;
 import com.osmar.tcc_mobile.model.ComponenteAdpterSensor;
-import com.osmar.tcc_mobile.model.ComponenteResposta;
 import com.osmar.tcc_mobile.model.ListaDeComponentes;
 
 import java.util.ArrayList;
@@ -140,7 +136,7 @@ public class RetrofitRequisicao {
 
     }
 
-    public void criarComponente(Componente componente, final Context context){
+    public void criarComponente(ComponenteAdpter componente, final Context context){
 
         Log.e("A Pino", "" + componente.getPin());
         Log.e("A type", "" + componente.getType());
@@ -148,12 +144,12 @@ public class RetrofitRequisicao {
         Log.e("A descri", "" + componente.getDescription());
 
         PlacaInterfaceApi placaInterfaceApi=retrofit.create(PlacaInterfaceApi.class);
-        Call<ComponenteResposta> call = placaInterfaceApi.adicionarComponente(componente);
-        call.enqueue(new Callback<ComponenteResposta>() {
+        Call<ComponenteAdpter> call = placaInterfaceApi.adicionarComponente(componente);
+        call.enqueue(new Callback<ComponenteAdpter>() {
             @Override
-            public void onResponse(Call<ComponenteResposta> call, Response<ComponenteResposta> response) {
+            public void onResponse(Call<ComponenteAdpter> call, Response<ComponenteAdpter> response) {
                 if(response.isSuccessful()){
-                    ComponenteResposta componenteResposta =response.body();
+                    ComponenteAdpter componenteResposta =response.body();
                     Toast.makeText(context,"O novo componente foi registrado com sucesso", Toast.LENGTH_LONG).show();
                 }
                 else{
@@ -163,49 +159,50 @@ public class RetrofitRequisicao {
             }
 
             @Override
-            public void onFailure(Call<ComponenteResposta> call, Throwable t) {
+            public void onFailure(Call<ComponenteAdpter> call, Throwable t) {
 
             }
+
+
         });
     }
 
-    /*
+
     public void removerComponente(ComponenteAdpter componente, final Context context){
         PlacaInterfaceApi placaInterfaceApi=retrofit.create(PlacaInterfaceApi.class);
-        Call<ComponenteResposta> call = placaInterfaceApi.removerComponente(componente);
-        call.enqueue(new Callback<ComponenteResposta>() {
+        Call<Void> call =placaInterfaceApi.removerComponente(componente);
+        call.enqueue(new Callback<Void>() {
             @Override
-            public void onResponse(Call<ComponenteResposta> call, Response<ComponenteResposta> response) {
+            public void onResponse(Call<Void> call, Response<Void> response) {
                 if(response.isSuccessful()){
-                    ComponenteResposta componenteResposta =response.body();
-                    Toast.makeText(context,"O componente foi apagado com sucesso", Toast.LENGTH_LONG).show();
-                }
-                else{
-                    ApiError apiError=ErrorUtils.parseError(response);
-                    Toast.makeText(context,apiError.message(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(context,"Componente apagado",Toast.LENGTH_LONG).show();
+
+
+                }else{
+
                 }
             }
 
             @Override
-            public void onFailure(Call<ComponenteResposta> call, Throwable t) {
+            public void onFailure(Call<Void> call, Throwable t) {
 
             }
-
-
         });
 
 
     }
-*/
-    public void editarComponente(Componente componente, final Context context){
+
+    public void editarComponente( ComponenteAdpter componente, final Context context){
         PlacaInterfaceApi placaInterfaceApi=retrofit.create(PlacaInterfaceApi.class);
-        Call<ComponenteResposta> call = placaInterfaceApi.editarComponente(componente);
-        call.enqueue(new Callback<ComponenteResposta>() {
+        Log.e("Componente id nome ",""+componente.getId()+"/"+componente.getName()+"/"+componente.getDescription());
+        Call<ComponenteAdpter> call = placaInterfaceApi.editarComponente(componente);
+        call.enqueue(new Callback<ComponenteAdpter>() {
             @Override
-            public void onResponse(Call<ComponenteResposta> call, Response<ComponenteResposta> response) {
+            public void onResponse(Call<ComponenteAdpter> call, Response<ComponenteAdpter> response) {
                 if(response.isSuccessful()){
-                    ComponenteResposta componenteResposta =response.body();
-                    Toast.makeText(context,"O componente foi editado com sucesso", Toast.LENGTH_LONG).show();
+                    ComponenteAdpter componenteResposta =response.body();
+                    Log.e(" Mudando o nome ","/"+componenteResposta.getName()) ;
+                Toast.makeText(context,"O componente foi editado com sucesso", Toast.LENGTH_LONG).show();
                 }
                 else{
                     ApiError apiError=ErrorUtils.parseError(response);
@@ -214,7 +211,7 @@ public class RetrofitRequisicao {
             }
 
             @Override
-            public void onFailure(Call<ComponenteResposta> call, Throwable t) {
+            public void onFailure(Call<ComponenteAdpter> call, Throwable t) {
 
             }
         });

@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         }else if(estado.getBoolean("bkey", true) == true){
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
-        listaAtualizaveldeComponentes.clear();
+
         listarC();
     }
 
@@ -132,7 +132,10 @@ public class MainActivity extends AppCompatActivity {
 
                                     @Override
                                     public void onLongItemClick(View view, int position) {
+                                        ComponenteAdpter componente =listaAtualizaveldeComponentes.get(position);
 
+
+                                        criarPopUp(retrofitRequisicao,componente);
 
                                     }
 
@@ -193,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void listarC()
     {
-
+        listaAtualizaveldeComponentes.clear();
          retrofitRequisicao.listarComponentes();
 
     }
@@ -201,13 +204,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void criarPopUp(final RetrofitRequisicao retrofitDoPop, ComponenteAdpter Componente){
+    public void criarPopUp(final RetrofitRequisicao retrofitDoPop, final ComponenteAdpter componente){
         AlertDialogAdComponente alertDialogAdComponente = new AlertDialogAdComponente(this, "Excluir componente", "Você tem certeza que quer excluir este componente ?");
         AlertDialog.Builder alertDialog = alertDialogAdComponente.getAlertDialog();
 
         alertDialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                //retrofitDoPop.removerComponente(Componente);
+                retrofitDoPop.removerComponente(componente,getApplicationContext());
+
+                listarC();
             }
         });
 

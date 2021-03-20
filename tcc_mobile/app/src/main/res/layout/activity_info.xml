@@ -111,6 +111,17 @@
             android:text="Pino x"
             android:textSize="24sp" />
 
+        <Button
+            android:id="@+id/btnSalvarLed"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_salvar_button"
+            android:text="Salvar"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

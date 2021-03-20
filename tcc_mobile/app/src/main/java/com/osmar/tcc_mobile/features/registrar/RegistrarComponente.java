@@ -1,12 +1,9 @@
 package com.osmar.tcc_mobile.features.registrar;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -17,11 +14,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.osmar.tcc_mobile.Api.RetrofitRequisicao;
 import com.osmar.tcc_mobile.R;
-import com.osmar.tcc_mobile.model.Componente;
 import com.osmar.tcc_mobile.model.ComponenteAdpter;
 
 import java.util.ArrayList;
@@ -60,8 +55,8 @@ public class RegistrarComponente extends AppCompatActivity {
         }else if(estado.getBoolean("bkey", true) == true){
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
+*/
 
-         */
 
     }
 
@@ -126,7 +121,7 @@ public class RegistrarComponente extends AppCompatActivity {
 
 
 
-        Log.i("depois do ListView","fodas listView");
+
 
         txtComponentePino.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -205,9 +200,9 @@ public class RegistrarComponente extends AppCompatActivity {
                 }
 
 
-                Componente componente =new Componente(nome,des,tipo2,pino);
+                ComponenteAdpter componente =new ComponenteAdpter(nome,des,tipo2,pino);
                 retrofitRequisicao.criarComponente(componente,getApplicationContext());
-                //finish();
+                finish();
             }
         });
 
