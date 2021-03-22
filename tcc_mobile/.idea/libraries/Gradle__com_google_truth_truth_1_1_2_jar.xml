@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: com.google.truth:truth:1.1.2">
+  <library name="Gradle: com.google.truth:truth:1.1.2@jar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.truth/truth/1.1.2/90621af08df4be0c1619645707460c7065c81c45/truth-1.1.2.jar!/" />
     </CLASSES>
