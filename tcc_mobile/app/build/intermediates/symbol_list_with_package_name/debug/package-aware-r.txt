@@ -1573,11 +1573,13 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_adicionar
+drawable ic_btn_switch_on
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
 drawable ic_edit_black_24dp
 drawable ic_float_action_button_icon
 drawable ic_icon_awesome_check
+drawable ic_icon_awesome_temperature_low
 drawable ic_icon_awesome_times
 drawable ic_icon_ionic_ios_add_circle
 drawable ic_icon_ionic_md_menu
@@ -1715,6 +1717,7 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btnExcluirLed
 id btnOnOffLed
 id btnSairRegistrar2
 id btnSalvarLed
@@ -1741,10 +1744,10 @@ id clip_vertical
 id collapseActionView
 id componente
 id confirm_button
-id constraint
 id constraintInfo
 id constraintLayout
 id constraintLayout2
+id constraintMain
 id container
 id content
 id contentPanel
@@ -1976,6 +1979,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id temperature
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id text
@@ -2092,6 +2096,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_config
 layout activity_info
+layout activity_info_sensor
 layout activity_main
 layout activity_registrar_componente
 layout adpter_lista_componentes

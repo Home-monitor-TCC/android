@@ -14,8 +14,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_adicionar" />
-                            <entry key="sourceFile" value="C:\Users\osmar\Desktop\Apps\TCC-feature-mecanina_telas\tcc_mobile\app\src\main\res\drawable-v24\adicionar.svg" />
+                            <entry key="outputName" value="ic_icon_metro_switch" />
+                            <entry key="sourceFile" value="C:\Users\osmar\Desktop\Tcc-Github\android\tcc_mobile\app\src\main\res\drawable-v24\ic_icon_metro_switch.svg" />
                           </map>
                         </option>
                       </PersistentState>

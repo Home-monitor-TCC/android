@@ -2,6 +2,9 @@ package com.osmar.tcc_mobile.features.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintProperties;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,6 +31,7 @@ import com.osmar.tcc_mobile.R;
 import com.osmar.tcc_mobile.features.config.ConfigActivity;
 import com.osmar.tcc_mobile.features.config.SaveState;
 import com.osmar.tcc_mobile.features.informações.InfoActivity;
+import com.osmar.tcc_mobile.features.informações.InfoActivityTemp;
 import com.osmar.tcc_mobile.features.registrar.RegistrarComponente;
 import com.osmar.tcc_mobile.model.ComponenteAdpter;
 
@@ -39,18 +43,16 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerComponentes;
     private ImageView imgButtonConfig;
 
-
-
-
-
+    private ConstraintLayout mainC;
 
     //
     private RetrofitRequisicao retrofitRequisicao;
-
     //Aqui é nosso obersvador
     private LiveData<List<ComponenteAdpter>> listaComponentesObservador;
     //Iremos criar aqui nossa lista que sera atualizada de acordo com oque acontecer na listaMutavel da outra classe
     private List<ComponenteAdpter> listaAtualizaveldeComponentes=new ArrayList<>();
+
+
 
 
     public List<ComponenteAdpter> getListaAtualizaveldeComponentes() {
@@ -68,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences estado = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         if(estado.getBoolean("bkey", true) == false){
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
         }else if(estado.getBoolean("bkey", true) == true){
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
-
         listarC();
     }
 
@@ -83,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
 
         retrofitRequisicao = new RetrofitRequisicao(getApplicationContext());
@@ -120,11 +124,21 @@ public class MainActivity extends AppCompatActivity {
                                 new RecyclerItemClickListener.OnItemClickListener() {
                                     @Override
                                     public void onItemClick(View view, int position) {
-                                        Intent intent =new Intent(getApplicationContext(), InfoActivity.class);
+
+
 
                                         ComponenteAdpter componente =listaAtualizaveldeComponentes.get(position);
-                                        intent.putExtra("componente",componente);
-                                        startActivity(intent);
+
+                                        if(componente.getType() == 1){
+                                            Intent intent =new Intent(getApplicationContext(), InfoActivity.class);
+                                            intent.putExtra("componente",componente);
+                                            startActivity(intent);
+                                        }else{
+                                            Intent intent =new Intent(getApplicationContext(), InfoActivityTemp.class);
+                                            intent.putExtra("componente",componente);
+                                            startActivity(intent);
+                                        }
+
 
 
 
@@ -132,10 +146,10 @@ public class MainActivity extends AppCompatActivity {
 
                                     @Override
                                     public void onLongItemClick(View view, int position) {
-                                        ComponenteAdpter componente =listaAtualizaveldeComponentes.get(position);
+                                        //ComponenteAdpter componente =listaAtualizaveldeComponentes.get(position);
 
 
-                                        criarPopUp(retrofitRequisicao,componente);
+                                        //criarPopUp(retrofitRequisicao,componente);
 
                                     }
 
@@ -182,13 +196,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
-
-
     }
 
 
@@ -204,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void criarPopUp(final RetrofitRequisicao retrofitDoPop, final ComponenteAdpter componente){
+    /*public void criarPopUp(final RetrofitRequisicao retrofitDoPop, final ComponenteAdpter componente){
         AlertDialogAdComponente alertDialogAdComponente = new AlertDialogAdComponente(this, "Excluir componente", "Você tem certeza que quer excluir este componente ?");
         AlertDialog.Builder alertDialog = alertDialogAdComponente.getAlertDialog();
 
@@ -224,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
 
         alertDialog.create();
         alertDialog.show();
-    }
+    }*/
 
 
 }

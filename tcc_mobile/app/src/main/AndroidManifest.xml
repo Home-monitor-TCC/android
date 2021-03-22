@@ -14,6 +14,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".features.config.ConfigActivity"></activity>
         <activity android:name=".features.informações.InfoActivity" />
+        <activity android:name=".features.informações.InfoActivityTemp" />
         <activity android:name=".features.registrar.RegistrarComponente" />
         <activity android:name=".features.main.MainActivity">
             <intent-filter>

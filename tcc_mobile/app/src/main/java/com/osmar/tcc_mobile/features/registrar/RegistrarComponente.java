@@ -1,9 +1,12 @@
 package com.osmar.tcc_mobile.features.registrar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -47,14 +50,14 @@ public class RegistrarComponente extends AppCompatActivity {
         ;
         listaAtualizaveldePinos.clear();
         retrofitRequisicao.listarPinos();
-        /*
+
         SharedPreferences estado = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         if(estado.getBoolean("bkey", true) == false){
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }else if(estado.getBoolean("bkey", true) == true){
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
-*/
+
 
 
     }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,7 @@ public class InfoActivity extends AppCompatActivity {
     private EditText editComponenteDescricao;
     private TextView txtPinoEscolhido;
     private Button  btnSalvar;
+    private Button  btnExcluir;
     private ImageView btnOnOff;
     private RetrofitRequisicao retrofitRequisicao;
 
@@ -38,6 +40,12 @@ public class InfoActivity extends AppCompatActivity {
         }else if(estado.getBoolean("bkey", true) == true){
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
+
+        if(componenteButao.getState() == true){
+            btnOnOff.setImageResource(R.drawable.ic_btn_switch_on);
+        }else{
+            btnOnOff.setImageResource(R.drawable.ic_icon_metro_switch);
+        }
     }
 
     @Override
@@ -49,6 +57,7 @@ public class InfoActivity extends AppCompatActivity {
         editComponenteName=findViewById(R.id.editTextComponenteNameRegistro2);
         txtPinoEscolhido=findViewById(R.id.txtPinoEscolhidoInfo);
         btnSalvar=findViewById(R.id.btnSalvarLed);
+        btnExcluir=findViewById(R.id.btnExcluirLed);
         btnOnOff = findViewById(R.id.btnOnOffLed);
         retrofitRequisicao=new RetrofitRequisicao(getApplicationContext());
         Bundle dadosComponente =getIntent().getExtras();
@@ -84,6 +93,14 @@ public class InfoActivity extends AppCompatActivity {
                 String des=editComponenteDescricao.getText().toString();
                 ComponenteAdpter componenteAdpter=new ComponenteAdpter(componenteButao.getId(),nome,des);
                 retrofitRequisicao.editarComponente(componenteAdpter,getApplicationContext());
+            }
+        });
+
+        btnExcluir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                retrofitRequisicao.removerComponente(componenteButao,getApplicationContext());
+                finish();
             }
         });
 

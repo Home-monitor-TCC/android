@@ -36,8 +36,14 @@ public class Adpter extends RecyclerView.Adapter<Adpter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         ComponenteAdpter componente =listaComponentes.get(position);
         holder.nome_Componente.setText(componente.getName());
-        holder.tipo.setText("Tipo"+componente.getType());
-        holder.imagem_Estado.setImageResource(componente.getImgEstadoResource());
+        if(componente.getType() == 1){
+            holder.tipo.setText("LED");
+            holder.imagem_Estado.setImageResource(R.drawable.ic_btn_switch_on);
+        }else{
+            holder.tipo.setText("Sensor de temperatura");
+            holder.imagem_Estado.setImageResource(R.drawable.ic_icon_awesome_temperature_low);
+        }
+
 
     }
 
