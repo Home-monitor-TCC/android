@@ -20,7 +20,7 @@
             android:layout_height="52dp">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/NomeComponenteTitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -35,9 +35,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintBottom_toBottomOf="@+id/NomeComponenteTitulo"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/NomeComponenteTitulo"
                 app:srcCompat="@drawable/ic_icon_material_arrow_back" />
 
 

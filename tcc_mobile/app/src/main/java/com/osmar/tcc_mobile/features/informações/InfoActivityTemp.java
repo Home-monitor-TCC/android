@@ -26,10 +26,12 @@ public class InfoActivityTemp extends AppCompatActivity{
     private EditText editComponenteName;
     private EditText editComponenteDescricao;
     private TextView txtPinoEscolhido;
+    private TextView nomeComponente;
     private TextView temp;
     private Button btnSalvar;
     private Button  btnExcluir;
     private RetrofitRequisicao retrofitRequisicao;
+    //
 
     @Override
     protected void onStart() {
@@ -37,9 +39,9 @@ public class InfoActivityTemp extends AppCompatActivity{
 
         SharedPreferences estado = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         if(estado.getBoolean("bkey", true) == false){
-            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }else if(estado.getBoolean("bkey", true) == true){
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }else if(estado.getBoolean("bkey", true) == true){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
 
         temp.setText(componenteButao.getTemperature() + "°C");
@@ -61,6 +63,8 @@ public class InfoActivityTemp extends AppCompatActivity{
         Bundle dadosComponente =getIntent().getExtras();
         componenteButao =(ComponenteAdpterSensor) dadosComponente.getSerializable("componente");
 
+        nomeComponente = findViewById(R.id.NomeComponenteTitulo);
+        nomeComponente.setText(componenteButao.getName());
         editComponenteName.setText(componenteButao.getName());
         editComponenteDescricao.setText(componenteButao.getDescription());
         txtPinoEscolhido.setText(""+componenteButao.getPin());

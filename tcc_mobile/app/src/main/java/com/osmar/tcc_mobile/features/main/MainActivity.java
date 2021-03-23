@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -20,6 +21,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -55,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
     public List<ComponenteAdpter> getListaAtualizaveldeComponentes() {
         return listaAtualizaveldeComponentes;
     }
@@ -63,16 +67,16 @@ public class MainActivity extends AppCompatActivity {
         this.listaAtualizaveldeComponentes = listaAtualizaveldeComponentes;
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onStart() {
         super.onStart();
 
         SharedPreferences estado = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         if(estado.getBoolean("bkey", true) == false){
-            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
-        }else if(estado.getBoolean("bkey", true) == true){
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }else if(estado.getBoolean("bkey", true) == true){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
         listarC();
     }

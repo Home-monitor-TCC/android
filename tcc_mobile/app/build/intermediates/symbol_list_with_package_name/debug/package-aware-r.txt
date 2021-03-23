@@ -1633,6 +1633,7 @@ id FUNCTION
 id FirstFragment
 id META
 id NO_DEBUG
+id NomeComponenteTitulo
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -1988,7 +1989,6 @@ id textEnd
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
-id textView
 id textView2
 id textView3
 id textView4

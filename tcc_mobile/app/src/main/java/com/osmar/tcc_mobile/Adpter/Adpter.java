@@ -1,9 +1,11 @@
 package com.osmar.tcc_mobile.Adpter;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,19 +25,20 @@ public class Adpter extends RecyclerView.Adapter<Adpter.MyViewHolder> {
     }
 
 
+    @SuppressLint("ResourceAsColor")
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View itemLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.adpter_lista_componentes, parent, false);
+        //itemLista.setBackgroundColor(R.color.cinzaEscuro);
         return new MyViewHolder(itemLista);
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         ComponenteAdpter componente =listaComponentes.get(position);
         holder.nome_Componente.setText(componente.getName());
+
         if(componente.getType() == 1){
             holder.tipo.setText("LED");
             holder.imagem_Estado.setImageResource(R.drawable.ic_btn_switch_on);

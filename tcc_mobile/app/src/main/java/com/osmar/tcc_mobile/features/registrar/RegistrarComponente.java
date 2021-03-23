@@ -53,9 +53,9 @@ public class RegistrarComponente extends AppCompatActivity {
 
         SharedPreferences estado = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         if(estado.getBoolean("bkey", true) == false){
-            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }else if(estado.getBoolean("bkey", true) == true){
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }else if(estado.getBoolean("bkey", true) == true){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
 
 

@@ -26,6 +26,7 @@ public class InfoActivity extends AppCompatActivity {
     private EditText editComponenteDescricao;
     private TextView txtPinoEscolhido;
     private Button  btnSalvar;
+    private TextView nomeComponente;
     private Button  btnExcluir;
     private ImageView btnOnOff;
     private RetrofitRequisicao retrofitRequisicao;
@@ -36,9 +37,9 @@ public class InfoActivity extends AppCompatActivity {
 
         SharedPreferences estado = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         if(estado.getBoolean("bkey", true) == false){
-            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }else if(estado.getBoolean("bkey", true) == true){
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }else if(estado.getBoolean("bkey", true) == true){
+            getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
 
         if(componenteButao.getState() == true){
@@ -63,6 +64,8 @@ public class InfoActivity extends AppCompatActivity {
         Bundle dadosComponente =getIntent().getExtras();
         componenteButao =(ComponenteAdpterLed)dadosComponente.getSerializable("componente");
 
+        nomeComponente = findViewById(R.id.NomeComponenteTitulo);
+        nomeComponente.setText(componenteButao.getName());
         editComponenteName.setText(componenteButao.getName());
         editComponenteDescricao.setText(componenteButao.getDescription());
         txtPinoEscolhido.setText(""+componenteButao.getPin());
@@ -79,8 +82,12 @@ public class InfoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(componenteButao.getState() == true){
                     retrofitRequisicao.apagarComponente(componenteButao, getApplicationContext());
+                    btnOnOff.setImageResource(R.drawable.ic_icon_metro_switch);
+                    componenteButao.setState(false);
                 }else{
                     retrofitRequisicao.acenderComponente(componenteButao, getApplicationContext());
+                    btnOnOff.setImageResource(R.drawable.ic_btn_switch_on);
+                    componenteButao.setState(true);
                 }
 
             }
@@ -105,6 +112,5 @@ public class InfoActivity extends AppCompatActivity {
         });
 
     }
-
 
 }
