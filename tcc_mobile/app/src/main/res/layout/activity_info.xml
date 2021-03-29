@@ -25,6 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="Componente x"
+                android:textColor="@color/laranja"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgVoltar2"
@@ -51,6 +52,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="32dp"
             android:text="Nome"
+            android:textColor="@color/laranja"
             android:textSize="24sp" />
 
         <EditText
@@ -73,6 +75,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="32dp"
             android:text="Descrição"
+            android:textColor="@color/laranja"
             android:textSize="24sp" />
 
         <EditText
@@ -96,6 +99,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="32dp"
             android:text="Pino"
+            android:textColor="@color/laranja"
             android:textSize="24sp" />
 
         <TextView
@@ -111,41 +115,52 @@
             android:text="Pino x"
             android:textSize="24sp" />
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="99dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/btnSalvarLed"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="1dp"
                 android:background="@drawable/shape_salvar_button"
                 android:text="Salvar"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnExcluirLed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/btnExcluirLed"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|right"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="1dp"
                 android:layout_weight="0"
                 android:background="@drawable/shape_salvar_button"
                 android:text="Excluir"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp" />
-        </LinearLayout>
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnSalvarLed"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/barraLigaDesliga"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         app:layout_constraintBottom_toBottomOf="parent"

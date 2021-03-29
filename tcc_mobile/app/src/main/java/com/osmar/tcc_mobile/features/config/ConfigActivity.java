@@ -2,6 +2,8 @@ package com.osmar.tcc_mobile.features.config;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -17,18 +19,20 @@ public class ConfigActivity extends AppCompatActivity {
     private ImageView imageViewVoltar;
     private Switch fundo_app;
     private SaveState saveState;
-
+    private ConstraintLayout constraintBar;
 
     @Override
     protected void onStart() {
         super.onStart();
         if(saveState.getState()==true)
         {
+            constraintBar.setBackgroundColor(ContextCompat.getColor(this, R.color.cinzaMedio));
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             fundo_app.setChecked(true);
             //Osmar, se o switch ta como true , que ´o padrão dele , então o fundo fica no escuro , se for falso voce muda para claro
         }
         else{
+            constraintBar.setBackgroundColor(ContextCompat.getColor(this, R.color.brancoHeader));
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             fundo_app.setChecked(false);
             //Aqui fica no claro , obviamente
@@ -39,6 +43,7 @@ public class ConfigActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config);
+        constraintBar = findViewById(R.id.constraintLayout2);
         imageViewVoltar=findViewById(R.id.imgVoltar2);
         fundo_app=findViewById(R.id.switchTema);
         imageViewVoltar.setOnClickListener(new View.OnClickListener() {

@@ -2,6 +2,8 @@ package com.osmar.tcc_mobile.features.registrar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 
@@ -14,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -42,6 +45,9 @@ public class RegistrarComponente extends AppCompatActivity {
     private ListView listViewTipo;
     private String[] tipo={"Led", "Temperatura"};
 
+    private LinearLayout registroBar;
+    private LinearLayout confirmaBar;
+
 
     @Override
     protected void onStart() {
@@ -53,8 +59,12 @@ public class RegistrarComponente extends AppCompatActivity {
 
         SharedPreferences estado = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         if(estado.getBoolean("bkey", true) == false){
+            /*registroBar.setBackgroundColor(ContextCompat.getColor(this, R.color.brancoHeader));
+            confirmaBar.setBackgroundColor(ContextCompat.getColor(this, R.color.brancoHeader));*/
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }else if(estado.getBoolean("bkey", true) == true){
+            /*registroBar.setBackgroundColor(ContextCompat.getColor(this, R.color.cinzaMedio));
+            confirmaBar.setBackgroundColor(ContextCompat.getColor(this, R.color.cinzaMedio));*/
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
 
@@ -70,7 +80,8 @@ public class RegistrarComponente extends AppCompatActivity {
         retrofitRequisicao=new RetrofitRequisicao(getApplicationContext());
         setContentView(R.layout.activity_registrar_componente);
 
-
+        registroBar = findViewById(R.id.registroBar);
+        confirmaBar = findViewById(R.id.barraConfirma);
         btnConfirmar=findViewById(R.id.btnOnOffLed);
         editTextComponenteName=findViewById(R.id.editTextComponenteNameRegistro2);
         editTextComponenteDes=findViewById(R.id.editTextComponenteDescricaoRegistro2);

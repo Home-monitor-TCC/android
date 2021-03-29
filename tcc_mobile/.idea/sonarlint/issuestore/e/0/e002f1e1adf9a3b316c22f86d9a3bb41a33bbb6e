@@ -1,22 +1,24 @@
 
-|
-java:S1450"_Remove the "txtPinoEscolhido" field and declare it as a local variable in the relevant methods.(ìúî 8¶íğŞ…/
-{
-java:S1450"YRemove the "btnExcluir" field and declare it as a local variable in the relevant methods.(üŸşÊúÿÿÿÿ8¶íğŞ…/
-]	java:S110"<This class has 9 parents which is greater than 5 authorized.(¶µÚúÿÿÿÿ8¾ìóŞ…/
-K
-java:S1125'")Remove the literal "false" boolean value.(†Ë“ıÿÿÿÿ8¶íğŞ…/
-J
-java:S1125)"(Remove the literal "true" boolean value.(Ğèèåÿÿÿÿÿ8¶íğŞ…/
 u
-java:S1450"XRemove the "imgVoltar" field and declare it as a local variable in the relevant methods.(àÒù»8¶íğŞ…/
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(õçÉõ
-m
-java:S1128"KRemove this unused import 'com.osmar.tcc_mobile.model.ComponenteAdpterLed'.(ÑÊùôşÿÿÿÿ8œÛüŞ…/
+java:S1450"XRemove the "imgVoltar" field and declare it as a local variable in the relevant methods.(àÒù»8¶íğŞ…/
 a
-java:S1128"?Remove this unused import 'android.graphics.drawable.Drawable'.(Á‰º„ùÿÿÿÿ8ÓÕòŞ…/
-z
-java:S1450"XRemove the "btnSalvar" field and declare it as a local variable in the relevant methods.(£‚ÿÿÿÿÿ8¶íğŞ…/
-O
 java:S1128
-"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8ÓÕòŞ…/
+"?Remove this unused import 'android.graphics.drawable.Drawable'.(Á‰º„ùÿÿÿÿ8ÓÕòŞ…/
+z
+java:S1450"]Remove the "nomeComponente" field and declare it as a local variable in the relevant methods.(Ó«ëÇ8×‡³ì…/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(õçÉõ
+O
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8ÓÕòŞ…/
+J
+java:S11252"(Remove the literal "true" boolean value.(Ğèèåÿÿÿÿÿ8‹èêì…/
+z
+java:S1450!"XRemove the "btnSalvar" field and declare it as a local variable in the relevant methods.(£‚ÿÿÿÿÿ8¶íğŞ…/
+]	java:S110"<This class has 9 parents which is greater than 5 authorized.(¶µÚúÿÿÿÿ8¾ìóŞ…/
+m
+java:S1128"KRemove this unused import 'com.osmar.tcc_mobile.model.ComponenteAdpterLed'.(ÑÊùôşÿÿÿÿ8œÛüŞ…/
+{
+java:S1450""YRemove the "btnExcluir" field and declare it as a local variable in the relevant methods.(üŸşÊúÿÿÿÿ8¶íğŞ…/
+|
+java:S1450"_Remove the "txtPinoEscolhido" field and declare it as a local variable in the relevant methods.(ìúî 8¶íğŞ…/
+K
+java:S1125.")Remove the literal "false" boolean value.(†Ë“ıÿÿÿÿ8¶íğŞ…/

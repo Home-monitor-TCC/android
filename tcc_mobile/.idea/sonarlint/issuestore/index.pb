@@ -16,7 +16,7 @@ Fapp/src/main/java/com/osmar/tcc_mobile/features/registrar/UIUtils.java,4/0/402
 ‚
 Rapp/src/main/java/com/osmar/tcc_mobile/features/registrar/RegistrarComponente.java,8\6\86b37bec7b51accdeea0440ce6e613f6a64e73c9
 q
-Aapp/src/main/java/com/osmar/tcc_mobile/Api/PlacaInterfaceApi.java,0/b/0ba5a8a3f6a4d0ef7668b934822fe24c6e33e046
+Aapp/src/main/java/com/osmar/tcc_mobile/Api/PlacaInterfaceApi.java,0\b\0ba5a8a3f6a4d0ef7668b934822fe24c6e33e046
 t
 Dapp/src/main/java/com/osmar/tcc_mobile/model/ListaDeComponentes.java,9\c\9c0dbcec7a1c290f68924921307e52e6c9ff1be1
 r

@@ -2,6 +2,8 @@ package com.osmar.tcc_mobile.features.informações;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -31,14 +33,21 @@ public class InfoActivity extends AppCompatActivity {
     private ImageView btnOnOff;
     private RetrofitRequisicao retrofitRequisicao;
 
+    private ConstraintLayout infoConstraint;
+    private ConstraintLayout barraLigaDesliga;
+
     @Override
     protected void onStart() {
         super.onStart();
 
         SharedPreferences estado = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         if(estado.getBoolean("bkey", true) == false){
+            infoConstraint.setBackgroundColor(ContextCompat.getColor(this, R.color.brancoHeader));
+            barraLigaDesliga.setBackgroundColor(ContextCompat.getColor(this, R.color.brancoHeader));
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }else if(estado.getBoolean("bkey", true) == true){
+            infoConstraint.setBackgroundColor(ContextCompat.getColor(this, R.color.cinzaMedio));
+            barraLigaDesliga.setBackgroundColor(ContextCompat.getColor(this, R.color.cinzaMedio));
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
 
@@ -60,6 +69,10 @@ public class InfoActivity extends AppCompatActivity {
         btnSalvar=findViewById(R.id.btnSalvarLed);
         btnExcluir=findViewById(R.id.btnExcluirLed);
         btnOnOff = findViewById(R.id.btnOnOffLed);
+
+        infoConstraint = findViewById(R.id.constraintInfo);
+        barraLigaDesliga = findViewById(R.id.barraLigaDesliga);
+
         retrofitRequisicao=new RetrofitRequisicao(getApplicationContext());
         Bundle dadosComponente =getIntent().getExtras();
         componenteButao =(ComponenteAdpterLed)dadosComponente.getSerializable("componente");

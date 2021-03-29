@@ -2,6 +2,8 @@ package com.osmar.tcc_mobile.features.informações;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -31,6 +33,9 @@ public class InfoActivityTemp extends AppCompatActivity{
     private Button btnSalvar;
     private Button  btnExcluir;
     private RetrofitRequisicao retrofitRequisicao;
+
+    private ConstraintLayout infoConstraint;
+    private ConstraintLayout barraTemp;
     //
 
     @Override
@@ -39,8 +44,12 @@ public class InfoActivityTemp extends AppCompatActivity{
 
         SharedPreferences estado = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         if(estado.getBoolean("bkey", true) == false){
+            infoConstraint.setBackgroundColor(ContextCompat.getColor(this, R.color.brancoHeader));
+            barraTemp.setBackgroundColor(ContextCompat.getColor(this, R.color.brancoHeader));
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }else if(estado.getBoolean("bkey", true) == true){
+            infoConstraint.setBackgroundColor(ContextCompat.getColor(this, R.color.brancoHeader));
+            barraTemp.setBackgroundColor(ContextCompat.getColor(this, R.color.brancoHeader));
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
 
@@ -59,6 +68,10 @@ public class InfoActivityTemp extends AppCompatActivity{
         btnSalvar=findViewById(R.id.btnSalvarLed);
         btnExcluir=findViewById(R.id.btnExcluirLed);
         temp = findViewById(R.id.temperature);
+
+        infoConstraint = findViewById(R.id.constraintInfo);
+        barraTemp = findViewById(R.id.barraTemp);
+
         retrofitRequisicao=new RetrofitRequisicao(getApplicationContext());
         Bundle dadosComponente =getIntent().getExtras();
         componenteButao =(ComponenteAdpterSensor) dadosComponente.getSerializable("componente");

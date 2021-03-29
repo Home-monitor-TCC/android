@@ -1,22 +1,32 @@
 
+]	java:S110"<This class has 9 parents which is greater than 5 authorized.(óœıÿÿÿÿ8öáÙÜ…/
 ]
-java:S1126£"AReplace this if-then-else statement by a single return statement.(«‡Àüúÿÿÿÿ
-]	java:S110"<This class has 9 parents which is greater than 5 authorized.(óœıÿÿÿÿ8öáÙÜ…/
-o
-java:S2293X"YReplace the type specification in this constructor call with the diamond operator ("<>").(…‡ÿ«
+java:S1126®"AReplace this if-then-else statement by a single return statement.(«‡Àüúÿÿÿÿ
 
-java:S1450"mRemove the "listaComponentesObservadoPinos" field and declare it as a local variable in the relevant methods.(Ô‰Éüÿÿÿÿ8âü¢Ü…/
-{
-java:S2293n"YReplace the type specification in this constructor call with the diamond operator ("<>").(ãº‰‡ÿÿÿÿÿ8¢ã°à„/
-]
-java:S1126­"AReplace this if-then-else statement by a single return statement.(«‡Àüúÿÿÿÿ
-q
-java:S1450""[Remove the "btnConfirmar" field and declare it as a local variable in the relevant methods.(¥õó¡
-K
-java:S11257")Remove the literal "false" boolean value.(†Ë“ıÿÿÿÿ8ş¶ÂŞ…/
->
-java:S11162"Remove this empty statement.(Åñ­õşÿÿÿÿ8õïÜà„/
-J
-java:S11259"(Remove the literal "true" boolean value.(Ğèèåÿÿÿÿÿ8ş¶ÂŞ…/
+java:S1450!"mRemove the "listaComponentesObservadoPinos" field and declare it as a local variable in the relevant methods.(Ô‰Éüÿÿÿÿ8âü¢Ü…/
+x
+java:S1450%"[Remove the "btnConfirmar" field and declare it as a local variable in the relevant methods.(¥õó¡8¡Åñ‡/
 k
-java:S1450#"VRemove the "btnSair" field and declare it as a local variable in the relevant methods.(Û¦ı]
+java:S1450&"VRemove the "btnSair" field and declare it as a local variable in the relevant methods.(Û¦ı]
+J
+java:S1125A"(Remove the literal "true" boolean value.(Ğèèåÿÿÿÿÿ8º­ëì…/
+p
+java:S1128"NRemove this unused import 'androidx.constraintlayout.widget.ConstraintLayout'.(¨‘úÿÿÿÿ8Ô³øğ‡/
+]
+java:S1126¸"AReplace this if-then-else statement by a single return statement.(«‡Àüúÿÿÿÿ
+o
+java:S2293c"YReplace the type specification in this constructor call with the diamond operator ("<>").(…‡ÿ«
+>
+java:S11168"Remove this empty statement.(Åñ­õşÿÿÿÿ8õïÜà„/
+K
+java:S1125=")Remove the literal "false" boolean value.(†Ë“ıÿÿÿÿ8ş¶ÂŞ…/
+{
+java:S2293y"YReplace the type specification in this constructor call with the diamond operator ("<>").(ãº‰‡ÿÿÿÿÿ8¢ã°à„/
+|
+java:S14501"ZRemove the "confirmaBar" field and declare it as a local variable in the relevant methods.(Òä•›úÿÿÿÿ8µÎÍñ‡/
+|
+java:S14500"ZRemove the "registroBar" field and declare it as a local variable in the relevant methods.(àæñ×ıÿÿÿÿ8µÎÍñ‡/
+]	java:S125>"<This block of commented-out lines of code should be removed.(Ëæêïıÿÿÿÿ8µÎÍñ‡/
+X	java:S125B"<This block of commented-out lines of code should be removed.(»òØ¯8µÎÍñ‡/
+Q
+java:S10681"/Remove this unused "confirmaBar" private field.(Òä•›úÿÿÿÿ8µÎÍñ‡/

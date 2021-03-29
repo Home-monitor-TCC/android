@@ -1,6 +1,6 @@
 
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÂÅŒ—
 O
 java:S1118":Add a private constructor to hide the implicit public one.(ñšé7
 I
 java:S1068".Remove this unused "httpClient" private field.(æóœøÿÿÿÿ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÂÅŒ—

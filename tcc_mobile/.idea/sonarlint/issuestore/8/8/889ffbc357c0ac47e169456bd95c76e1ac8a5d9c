@@ -1,27 +1,27 @@
 
-ü
-java:S1186ù"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Êì£Ã8÷ﬁ÷ﬁÖ/
-^	java:S125ò"<This block of commented-out lines of code should be removed.(æ§úù¸ˇˇˇˇ8÷ﬁ÷ﬁÖ/
-ã
-java:S14503"iRemove the "listaComponentesObservador" field and declare it as a local variable in the relevant methods.(Ÿòë˜˛ˇˇˇˇ8÷ﬁ÷ﬁÖ/
-O
-java:S1128"-Remove this unused import 'android.util.Log'.(‘¶ÿ≤¯ˇˇˇˇ8ÿΩÏ≈Ñ/
-K
-java:S1068.")Remove this unused "mainC" private field.(µøûÅˇˇˇˇˇ8ˇ™›ﬁÖ/
-X	java:S110)"<This class has 9 parents which is greater than 5 authorized.(≤⁄±é8€¶¶‹Ö/
-m
-java:S1128 "KRemove this unused import 'com.osmar.tcc_mobile.features.config.SaveState'.(µá’ç˛ˇˇˇˇ8¬óÖ‡Ñ/
-Y	java:S125ï"<This block of commented-out lines of code should be removed.(µ¥Ê–8÷ﬁ÷ﬁÖ/
 {
-java:S1450,"^Remove the "imgButtonConfig" field and declare it as a local variable in the relevant methods.(∆¡¬œ8Üµ±øÑ/
+java:S1450/"^Remove the "imgButtonConfig" field and declare it as a local variable in the relevant methods.(∆¡¬œ8Üµ±øÑ/
+K
+java:S1125M")Remove the literal "false" boolean value.(ÜÀùì˝ˇˇˇˇ8÷ﬁ÷ﬁÖ/
+X	java:S110,"<This class has 9 parents which is greater than 5 authorized.(≤⁄±é8€¶¶‹Ö/
+^	java:S125ü"<This block of commented-out lines of code should be removed.(æ§úù¸ˇˇˇˇ8Äπúá/
+S
+java:S1128"1Remove this unused import 'android.widget.Toast'.(©õÔÕ˙ˇˇˇˇ8¬óÖ‡Ñ/
+O
+java:S1128"-Remove this unused import 'android.util.Log'.(‘¶ÿ≤¯ˇˇˇˇ8ÿΩÏ≈Ñ/
+m
+java:S1128#"KRemove this unused import 'com.osmar.tcc_mobile.features.config.SaveState'.(µá’ç˛ˇˇˇˇ8¬óÖ‡Ñ/
+^	java:S125›"<This block of commented-out lines of code should be removed.(õ‰÷˛ˇˇˇˇˇ8Äπúá/
+J
+java:S1125P"(Remove the literal "true" boolean value.(–ËËÂˇˇˇˇˇ8Äπúá/
+ã
+java:S14506"iRemove the "listaComponentesObservador" field and declare it as a local variable in the relevant methods.(Ÿòë˜˛ˇˇˇˇ8÷ﬁ÷ﬁÖ/
+ü
+java:S1186§"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Êì£Ã8Äπúá/
 t
 java:S1128"RRemove this unused import 'androidx.constraintlayout.widget.ConstraintProperties'.(∂®‘∞˙ˇˇˇˇ8Ø¨÷ﬁÖ/
-J
-java:S1125J"(Remove the literal "true" boolean value.(–ËËÂˇˇˇˇˇ8÷ﬁ÷ﬁÖ/
 m
 java:S1128"KRemove this unused import 'androidx.constraintlayout.widget.ConstraintSet'.(≤‡òﬁ¸ˇˇˇˇ8˘÷œﬁÖ/
-^	java:S125÷"<This block of commented-out lines of code should be removed.(õ‰÷˛ˇˇˇˇˇ8÷ﬁ÷ﬁÖ/
-K
-java:S1125G")Remove the literal "false" boolean value.(ÜÀùì˝ˇˇˇˇ8÷ﬁ÷ﬁÖ/
-S
-java:S1128"1Remove this unused import 'android.widget.Toast'.(©õÔÕ˙ˇˇˇˇ8¬óÖ‡Ñ/
+Y	java:S125ú"<This block of commented-out lines of code should be removed.(µ¥Ê–8Äπúá/
+Z
+java:S1128"8Remove this unused import 'android.widget.LinearLayout'.(ÁÓöÁ˙ˇˇˇˇ8‘†ÿÎÖ/

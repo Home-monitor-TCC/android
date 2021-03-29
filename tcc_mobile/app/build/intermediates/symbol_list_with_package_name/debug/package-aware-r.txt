@@ -1711,6 +1711,9 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id barraConfirma
+id barraLigaDesliga
+id barraTemp
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1746,7 +1749,6 @@ id collapseActionView
 id componente
 id confirm_button
 id constraintInfo
-id constraintLayout
 id constraintLayout2
 id constraintMain
 id container
@@ -1911,6 +1913,7 @@ id radio
 id ratio
 id rectangles
 id recyclerComponentes
+id registroBar
 id reverseSawtooth
 id right
 id right_icon

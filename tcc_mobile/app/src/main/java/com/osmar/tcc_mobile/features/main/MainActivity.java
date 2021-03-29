@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintProperties;
 import androidx.constraintlayout.widget.ConstraintSet;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -74,8 +75,10 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences estado = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         if(estado.getBoolean("bkey", true) == false){
+            mainC.setBackgroundColor(ContextCompat.getColor(this, R.color.brancoHeader));
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }else if(estado.getBoolean("bkey", true) == true){
+            mainC.setBackgroundColor(ContextCompat.getColor(this, R.color.cinzaMedio));
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
         listarC();
@@ -96,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         retrofitRequisicao = new RetrofitRequisicao(getApplicationContext());
         setContentView(R.layout.activity_main);
 
-
+        mainC = findViewById(R.id.constraintMain);
         //é o parametro transmitido no observador que vai ativar o onchanged quando acontecer algo na lista
         Observer<List<ComponenteAdpter>> listaObservador= new Observer<List<ComponenteAdpter>>() {
             @Override

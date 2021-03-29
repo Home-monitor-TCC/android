@@ -224,7 +224,7 @@ public class RetrofitRequisicao {
             @Override
             public void onResponse(Call<ComponenteAdpterLed> call, Response<ComponenteAdpterLed> response) {
                 if (response.isSuccessful()){
-                    Toast.makeText(context, "Componente foi acesso com sucesso", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "Componente foi aceso com sucesso", Toast.LENGTH_LONG).show();
                 }else{
 
                 }
