@@ -1,11 +1,11 @@
 
-–
-java:S1319"{The type of the "listaComponentes" object should be an interface such as "List" rather than the implementation "ArrayList".(ı«òáûÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(™Ô¬™ıÿÿÿÿ
 Z
 java:S1128"8Remove this unused import 'android.widget.LinearLayout'.(çîšçúÿÿÿÿ8¢ÀÆë…/
 t	java:S116;"ZRename this field "nome_Componente" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉŠ’úÿÿÿÿ
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(™Ô¬™ıÿÿÿÿ
-m	java:S116="XRename this field "imagem_Estado" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ¸—
 f
 java:S1128"KRemove this unused import 'com.osmar.tcc_mobile.model.ComponenteAdpterLed'.(ÑÊùôşÿÿÿÿ
+–
+java:S1319"{The type of the "listaComponentes" object should be an interface such as "List" rather than the implementation "ArrayList".(ı«òáûÿÿÿÿ
 ]	java:S125!"<This block of commented-out lines of code should be removed.(ƒÚöŞÿÿÿÿÿ8ôş¨ì…/
+m	java:S116="XRename this field "imagem_Estado" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ¸—
