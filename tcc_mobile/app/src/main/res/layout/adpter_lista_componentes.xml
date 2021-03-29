@@ -11,7 +11,9 @@
         android:layout_height="match_parent"
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
+        android:elevation="0dp"
         android:orientation="vertical"
+        android:outlineProvider="none"
         android:showDividers="none">
 
         <LinearLayout
@@ -52,7 +54,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/separador"
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:layout_marginLeft="8dp"

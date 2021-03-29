@@ -58,13 +58,18 @@ public class Adpter extends RecyclerView.Adapter<Adpter.MyViewHolder> {
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView nome_Componente;
         TextView tipo;
+        TextView separador;
         ImageView imagem_Estado;
 
+
+        @SuppressLint("ResourceAsColor")
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             nome_Componente = itemView.findViewById(R.id.txtComponenteName);
             tipo = itemView.findViewById(R.id.txtTipoComponente);
             imagem_Estado = itemView.findViewById(R.id.imgButtonLiga);
+            separador = itemView.findViewById(R.id.separador);
+            separador.setTextColor(R.color.cinzaClaro);
 
 
         }
